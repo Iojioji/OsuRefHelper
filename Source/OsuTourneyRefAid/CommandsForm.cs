@@ -1,5 +1,4 @@
-﻿using OsuTourneyRefAid.Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +12,16 @@ using Newtonsoft.Json;
 using System.Runtime.InteropServices;
 using System.Globalization;
 using System.Diagnostics;
-using OsuTourneyRefAid.Data.Settings;
 using System.Runtime.Remoting.Metadata;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Text.RegularExpressions;
+using OsuTourneyRefHelper.Data.Settings;
+using OsuTourneyRefHelper.Data.Mappool;
+using OsuTourneyRefHelper.Data.Commands;
+using System.Net;
 
-namespace OsuTourneyRefAid
+namespace OsuTourneyRefHelper
 {
     public partial class MainForm : Form
     {
@@ -80,9 +82,11 @@ namespace OsuTourneyRefAid
         private void MainForm_Load(object sender, EventArgs e)
         {
             //CreateDummyPool();
-            SettingsManager.Tournament = LoadSettings();
+            SettingsManager.Settings = LoadSettings();
             commManager = new CommandManager();
             LoadPools();
+
+            Console.WriteLine(poolManager.version);
             SetupStageComBox();
 
             Console.WriteLine(poolManager.ToString());
@@ -90,7 +94,7 @@ namespace OsuTourneyRefAid
             LinkIirc();
 
             defaultStageBackColor = stageComBox.BackColor;
-            this.Text = $"{SettingsManager.Tournament.TourneyAcronym} Ref Helper";
+            this.Text = $"{SettingsManager.Settings.Tournament.TourneyAcronym} Ref Helper";
 
             //string output = JsonConvert.SerializeObject(poolManager);
             //File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
@@ -119,7 +123,14 @@ namespace OsuTourneyRefAid
                 MessageBox.Show(ex.Message);
             }
         }
+        void UpdateMappool()
+        {
+            MapPoolManager aux = new MapPoolManager();
+            using (WebClient wc = new WebClient())
+            {
 
+            }
+        }
         void SetupStageComBox()
         {
             stageComBox.DataSource = poolManager.GetStageNames();
@@ -142,14 +153,18 @@ namespace OsuTourneyRefAid
                 MessageBox.Show($"No se encontro el archivo de pools\r\nAsegurate que se encuentre en '{appPath}/Data' un archivo llamado Pools.json", "No pude cargar el pool :'c", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        TournamentSettings LoadSettings()
+        void LoadPool(string json)
         {
-            TournamentSettings aux = new TournamentSettings();
+
+        }
+        SettingsCollection LoadSettings()
+        {
+            SettingsCollection aux = new SettingsCollection();
             if (File.Exists($"{appPath}/Data/Settings.json"))
             {
                 try
                 {
-                    aux = JsonConvert.DeserializeObject<TournamentSettings>(File.ReadAllText($"{appPath}/Data/Settings.json"));
+                    aux = JsonConvert.DeserializeObject<SettingsCollection>(File.ReadAllText($"{appPath}/Data/Settings.json"));
                     return aux;
                 }
                 catch (Exception e)
@@ -167,7 +182,7 @@ namespace OsuTourneyRefAid
         void CreateDummyPool()
         {
             poolManager = new MapPoolManager();
-            poolManager.version = 1f;
+            poolManager.version = "1.0.0.0";
             poolManager.pools.Add(new MapPool
             {
                 Stage = "Qualifiers",
@@ -456,11 +471,11 @@ namespace OsuTourneyRefAid
             //await SendInput(commManager.Make(), false);
             if (stageComBox.SelectedItem.ToString() == "Qualifiers")
             {
-                await SendInput($"!mp make {SettingsManager.Tournament.TourneyAcronym}: Qualifiers Lobby #<numerito>", false);
+                await SendInput($"!mp make {SettingsManager.Settings.Tournament.TourneyAcronym}: Qualifiers Lobby #<numerito>", false);
             }
             else
             {
-                await SendInput($"!mp make {SettingsManager.Tournament.TourneyAcronym}: (<red>) vs (<blue>)", false);
+                await SendInput($"!mp make {SettingsManager.Settings.Tournament.TourneyAcronym}: (<red>) vs (<blue>)", false);
             }
         }
         private async void mppasswordButt_Click(object sender, EventArgs e)
@@ -531,6 +546,11 @@ namespace OsuTourneyRefAid
         private async void extraButt_Click(object sender, EventArgs e)
         {
             await SendInput("(´◉◞౪◟◉)");
+        }
+        private void exportSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string output = JsonConvert.SerializeObject(SettingsManager.Settings);
+            File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
         }
     }
 }

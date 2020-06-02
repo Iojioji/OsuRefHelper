@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OsuTourneyRefAid.Data
+namespace OsuTourneyRefHelper.Data.Mappool
 {
     class MapPoolManager
     {
-        public float version;
+        public string version;
         public List<MapPool> pools = new List<MapPool>();
 
         public List<string> GetStageNames()

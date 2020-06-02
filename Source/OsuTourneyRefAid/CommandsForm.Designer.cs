@@ -1,4 +1,4 @@
-﻿namespace OsuTourneyRefAid
+﻿namespace OsuTourneyRefHelper
 {
     partial class MainForm
     {
@@ -63,7 +63,15 @@
             this.mpaborttimerButt = new System.Windows.Forms.Button();
             this.mptimer = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.fileStripButt = new System.Windows.Forms.ToolStripSplitButton();
+            this.settingsStripButt = new System.Windows.Forms.ToolStripSplitButton();
+            this.poolStripButt = new System.Windows.Forms.ToolStripSplitButton();
+            this.poolEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updatePoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.importPoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportPoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenu.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.generalButtFlowLayout.SuspendLayout();
@@ -104,7 +112,7 @@
             // 
             // generalButtFlowLayout
             // 
-            this.generalButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.generalButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.generalButtFlowLayout.AutoScroll = true;
             this.generalButtFlowLayout.Controls.Add(this.mpmakeButt);
@@ -236,7 +244,7 @@
             // 
             // nomodButtFlowLayout
             // 
-            this.nomodButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.nomodButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nomodButtFlowLayout.AutoScroll = true;
             this.nomodButtFlowLayout.Location = new System.Drawing.Point(0, 0);
@@ -256,7 +264,7 @@
             // 
             // hiddenButtFlowLayout
             // 
-            this.hiddenButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.hiddenButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.hiddenButtFlowLayout.AutoScroll = true;
             this.hiddenButtFlowLayout.Location = new System.Drawing.Point(0, 0);
@@ -276,7 +284,7 @@
             // 
             // hardrockButtFlowLayout
             // 
-            this.hardrockButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.hardrockButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.hardrockButtFlowLayout.AutoScroll = true;
             this.hardrockButtFlowLayout.Location = new System.Drawing.Point(0, 0);
@@ -296,7 +304,7 @@
             // 
             // doubletimeButtFlowLayout
             // 
-            this.doubletimeButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.doubletimeButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.doubletimeButtFlowLayout.AutoScroll = true;
             this.doubletimeButtFlowLayout.Location = new System.Drawing.Point(0, 0);
@@ -316,7 +324,7 @@
             // 
             // freemodButtFlowLayout
             // 
-            this.freemodButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.freemodButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.freemodButtFlowLayout.AutoScroll = true;
             this.freemodButtFlowLayout.Location = new System.Drawing.Point(0, 0);
@@ -336,7 +344,7 @@
             // 
             // tiebreakerButtFlowLayout
             // 
-            this.tiebreakerButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tiebreakerButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tiebreakerButtFlowLayout.AutoScroll = true;
             this.tiebreakerButtFlowLayout.Location = new System.Drawing.Point(0, 0);
@@ -437,23 +445,85 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.fileStripButt,
+            this.settingsStripButt,
+            this.poolStripButt});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(562, 25);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // fileStripButt
             // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(50, 22);
-            this.toolStripButton1.Text = "tool";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.fileStripButt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fileStripButt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportSettingsToolStripMenuItem});
+            this.fileStripButt.Image = ((System.Drawing.Image)(resources.GetObject("fileStripButt.Image")));
+            this.fileStripButt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.fileStripButt.Name = "fileStripButt";
+            this.fileStripButt.Size = new System.Drawing.Size(41, 22);
+            this.fileStripButt.Text = "File";
+            // 
+            // settingsStripButt
+            // 
+            this.settingsStripButt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.settingsStripButt.Image = ((System.Drawing.Image)(resources.GetObject("settingsStripButt.Image")));
+            this.settingsStripButt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.settingsStripButt.Name = "settingsStripButt";
+            this.settingsStripButt.Size = new System.Drawing.Size(65, 22);
+            this.settingsStripButt.Text = "Settings";
+            // 
+            // poolStripButt
+            // 
+            this.poolStripButt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.poolStripButt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.poolEditorToolStripMenuItem,
+            this.updatePoolToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.importPoolToolStripMenuItem,
+            this.exportPoolToolStripMenuItem});
+            this.poolStripButt.Image = ((System.Drawing.Image)(resources.GetObject("poolStripButt.Image")));
+            this.poolStripButt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.poolStripButt.Name = "poolStripButt";
+            this.poolStripButt.Size = new System.Drawing.Size(47, 22);
+            this.poolStripButt.Text = "Pool";
+            // 
+            // poolEditorToolStripMenuItem
+            // 
+            this.poolEditorToolStripMenuItem.Name = "poolEditorToolStripMenuItem";
+            this.poolEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.poolEditorToolStripMenuItem.Text = "Pool Editor";
+            // 
+            // updatePoolToolStripMenuItem
+            // 
+            this.updatePoolToolStripMenuItem.Name = "updatePoolToolStripMenuItem";
+            this.updatePoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updatePoolToolStripMenuItem.Text = "Update Pool";
+            // 
+            // exportSettingsToolStripMenuItem
+            // 
+            this.exportSettingsToolStripMenuItem.Name = "exportSettingsToolStripMenuItem";
+            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportSettingsToolStripMenuItem.Text = "Export Settings";
+            this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.exportSettingsToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // importPoolToolStripMenuItem
+            // 
+            this.importPoolToolStripMenuItem.Name = "importPoolToolStripMenuItem";
+            this.importPoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importPoolToolStripMenuItem.Text = "Import Pool";
+            // 
+            // exportPoolToolStripMenuItem
+            // 
+            this.exportPoolToolStripMenuItem.Name = "exportPoolToolStripMenuItem";
+            this.exportPoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportPoolToolStripMenuItem.Text = "Export Pool";
             // 
             // MainForm
             // 
@@ -526,7 +596,15 @@
         private System.Windows.Forms.Button mpaborttimerButt;
         private System.Windows.Forms.Button mptimer;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSplitButton fileStripButt;
+        private System.Windows.Forms.ToolStripSplitButton settingsStripButt;
+        private System.Windows.Forms.ToolStripSplitButton poolStripButt;
+        private System.Windows.Forms.ToolStripMenuItem poolEditorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updatePoolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem importPoolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportPoolToolStripMenuItem;
     }
 }
 

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OsuTourneyRefHelper.Data.Commands
+namespace OsuTourneyRefHelper.Data.Settings
 {
-    class Command
+    public class SettingsCollection
     {
-        public string Name;
-        public string MPCommand;
+
+        public TournamentSettings Tournament;
     }
 }

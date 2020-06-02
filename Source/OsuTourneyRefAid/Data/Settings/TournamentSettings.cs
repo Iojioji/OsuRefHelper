@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OsuTourneyRefAid.Data.Settings
+namespace OsuTourneyRefHelper.Data.Settings
 {
     public enum ScoreMode { Score, Accuracy, Combo, ScoreV2}
     public enum TeamMode { HeadToHead, TagCoop, TeamVs, TagTeamVs }

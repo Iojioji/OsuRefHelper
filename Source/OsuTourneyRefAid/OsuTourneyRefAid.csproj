@@ -72,6 +72,7 @@
     <Compile Include="Data\Commands\CommandManager.cs" />
     <Compile Include="Data\Mappool\MapPool.cs" />
     <Compile Include="Data\Mappool\MapPoolManager.cs" />
+    <Compile Include="Data\Settings\SettingsCollection.cs" />
     <Compile Include="Data\Settings\SettingsManager.cs" />
     <Compile Include="Data\Settings\TournamentSettings.cs" />
     <Compile Include="CommandsForm.cs">

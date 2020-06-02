@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OsuTourneyRefAid.Data
+namespace OsuTourneyRefHelper.Data.Mappool
 {
     public enum MapMod { NM, HD, HR, DT, FM, TB }
     class Beatmap

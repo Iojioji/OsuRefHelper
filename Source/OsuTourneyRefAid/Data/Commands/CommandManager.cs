@@ -1,11 +1,12 @@
-﻿using OsuTourneyRefAid.Data.Settings;
+﻿using OsuTourneyRefHelper.Data.Settings;
+using OsuTourneyRefHelper.Data.Mappool;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OsuTourneyRefAid.Data
+namespace OsuTourneyRefHelper.Data.Commands
 {
     class CommandManager
     {
@@ -25,7 +26,7 @@ namespace OsuTourneyRefAid.Data
 
         public string Make()
         {
-            return $"!mp make {SettingsManager.Tournament.TourneyAcronym}: (<red>) vs (<blue>)";
+            return $"!mp make {SettingsManager.Settings.Tournament.TourneyAcronym}: (<red>) vs (<blue>)";
         }
         public string Pass()
         {
@@ -34,7 +35,7 @@ namespace OsuTourneyRefAid.Data
         }
         public string Set()
         {
-            return $"!mp set {(int)SettingsManager.Tournament.TeamMode} {(int)SettingsManager.Tournament.Scoring} {SettingsManager.Tournament.TeamSize * 2}";
+            return $"!mp set {(int)SettingsManager.Settings.Tournament.TeamMode} {(int)SettingsManager.Settings.Tournament.Scoring} {SettingsManager.Settings.Tournament.TeamSize * 2}";
         }
 
         public string ChangeMod()
