@@ -126,10 +126,53 @@ namespace OsuTourneyRefHelper
         void UpdateMappool()
         {
             MapPoolManager aux = new MapPoolManager();
-            using (WebClient wc = new WebClient())
+            try
             {
-                var json = wc.DownloadString("");
+                using (WebClient wc = new WebClient())
+                {
+                    var json = wc.DownloadString("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/Mappool/Pools.json");
+                    aux = LoadPool(json);
+                }
             }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Hijuesu, algo se rompio intentando descargar el pool de <link>\r\nMandale esto al menso del Iojioji\r\n\r\n{e.Message}", "Error inesperado al descargar el pool O:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (poolManager.version == null)
+            {
+                poolManager = aux;
+            }
+            else
+            {
+                if (IsPoolNewer(aux.version))
+                {
+                    poolManager = aux;
+                }
+            }
+
+            //SetupStageComBox();
+            SwitchToStage("Qualifiers");
+            SavePool();
+        }
+        bool IsPoolNewer(string newPoolVer)
+        {
+            string[] currentVer = poolManager.version.Split('.');
+            string[] newVer = newPoolVer.Split('.');
+
+            if (currentVer.Length < newVer.Length)
+            {
+                return true;
+            }
+            for (int i = 0; i < currentVer.Length; i++)
+            {
+                int currentNumber = int.Parse(currentVer[i]);
+                int newNumber = int.Parse(newVer[i]);
+                if (newNumber > currentNumber)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         void SetupStageComBox()
         {
@@ -150,12 +193,37 @@ namespace OsuTourneyRefHelper
             }
             else
             {
-                MessageBox.Show($"No se encontro el archivo de pools\r\nAsegurate que se encuentre en '{appPath}/Data' un archivo llamado Pools.json", "No pude cargar el pool :'c", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UpdateMappool();
+                //MessageBox.Show($"No se encontro el archivo de pools\r\nAsegurate que se encuentre en '{appPath}/Data' un archivo llamado Pools.json", "No pude cargar el pool :'c", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void LoadPool(string json)
+        MapPoolManager LoadPool(string json)
         {
-
+            MapPoolManager aux = new MapPoolManager();
+            try
+            {
+                aux = JsonConvert.DeserializeObject<MapPoolManager>(json);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Hijuesu, algo se rompio intentando cargar el pool\r\nMandale esto al menso del Iojioji\r\n\r\n{e.Message}", "Error inesperado al cargar el pool O:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return aux;
+        }
+        void SavePool()
+        {
+            string output = JsonConvert.SerializeObject(poolManager);
+            if (File.Exists($"{appPath}/Data/Pools.json"))
+            {
+                if (MessageBox.Show("Estas a punto de sobreescribir tu archivo de pools.\r\nQuieres guardar?", "Guardar Pools.json", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+                {
+                    File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
+                }
+            }
+            else
+            {
+                File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
+            }
         }
         SettingsCollection LoadSettings()
         {
@@ -551,6 +619,15 @@ namespace OsuTourneyRefHelper
         {
             string output = JsonConvert.SerializeObject(SettingsManager.Settings);
             File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
+        }
+        private void updatePoolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateMappool();
+        }
+        private void importPoolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Do the explorer thing
+            SavePool();
         }
     }
 }
