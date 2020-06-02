@@ -124,7 +124,7 @@ namespace OsuTourneyRefHelper.Data.Mappool
         }
         public string MapName()
         {
-            return $"{_title} - {_artist}";
+            return $"{_artist} - {_title}";
         }
 
         public override string ToString()

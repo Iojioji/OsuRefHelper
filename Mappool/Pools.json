@@ -1,0 +1,186 @@
+{
+  "version": "1.0.2.0",
+  "pools": [
+    {
+      "Stage": "Qualifiers",
+      "nmPool": [
+        {
+          "MapID": 745981,
+          "Title": "werewolf howls.",
+          "Artist": "Camellia",
+          "Mapper": "Nwolf",
+          "DiffName": "Muzukashii",
+          "BPM": 222,
+          "Stars": 2.98,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2252676,
+          "Title": "Galaxy Friends (WACCA Edition)",
+          "Artist": "Kobaryo",
+          "Mapper": "xtrem3x",
+          "DiffName": "Muzukashii",
+          "BPM": 300,
+          "Stars": 4.33,
+          "Mod": 0,
+          "ModIndex": 2
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 1653275,
+          "Title": "DropZ-Line-",
+          "Artist": "Getty vs. DJ DiA",
+          "Mapper": "[_Chichinya_]",
+          "DiffName": "Vulkin's Muzukashii",
+          "BPM": 200,
+          "Stars": 3.55,
+          "Mod": 1,
+          "ModIndex": 1
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 1229840,
+          "Title": "Memory Of Sunrise",
+          "Artist": "nora2r",
+          "Mapper": "_yu68",
+          "DiffName": "EM's Muzukashii",
+          "BPM": 180,
+          "Stars": 3.23,
+          "Mod": 2,
+          "ModIndex": 1
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 911720,
+          "Title": "Meriang (Speed Up Ver.)",
+          "Artist": "Cita Citata",
+          "Mapper": "Nishizumi",
+          "DiffName": "Gen's Muzukashii",
+          "BPM": 170,
+          "Stars": 3.07,
+          "Mod": 3,
+          "ModIndex": 1
+        }
+      ],
+      "fmPool": [],
+      "tbPool": []
+    },
+    {
+      "Stage": "Grupos",
+      "nmPool": [
+        {
+          "MapID": 2404849,
+          "Title": "GOODRAGE",
+          "Artist": "EBIMAYO",
+          "Mapper": "-xNaCLx-",
+          "DiffName": "Muzukashii",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2466124,
+          "Title": "1949",
+          "Artist": "SLAM",
+          "Mapper": "xtrem3x",
+          "DiffName": "Muzukashii",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 2451506,
+          "Title": "Kodoku Egoism",
+          "Artist": "Rohi",
+          "Mapper": "DakeDekaane",
+          "DiffName": "Muzukashii",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 435821,
+          "Title": "Super Nuko World",
+          "Artist": "yuikonnu && ayaponzy*",
+          "Mapper": "DarknessAngel",
+          "DiffName": "D.N.Angel's Muzukashii",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 2395917,
+          "Title": "Senorita Bonita",
+          "Artist": "Celldweller",
+          "Mapper": "Lime717",
+          "DiffName": "Muzukashii",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1838613,
+          "Title": "On And On!!",
+          "Artist": "ETIA. feat. Jenga",
+          "Mapper": "Noko_BSF",
+          "DiffName": "Noko's Muzukashii!",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 835124,
+          "Title": "Tanhou ~Blooming~",
+          "Artist": "Zhan Xun Wei",
+          "Mapper": "Charlotte",
+          "DiffName": "Charlotte's Muzukashii",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 835124,
+          "Title": "Base After Base",
+          "Artist": "DJVI",
+          "Mapper": "Jason X",
+          "DiffName": "Muzukashii",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [],
+      "tbPool": [
+        {
+          "MapID": 2330734,
+          "Title": "Neo-Tokyo",
+          "Artist": "Scandroid",
+          "Mapper": "Lime717",
+          "DiffName": "Luminosity",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    }
+  ]
+}

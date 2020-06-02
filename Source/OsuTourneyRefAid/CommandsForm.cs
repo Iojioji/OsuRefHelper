@@ -104,8 +104,8 @@ namespace OsuTourneyRefHelper
         {
             try
             {
-                osuIrcHandle = WinGetHandle("chat4osu");
-                //osuIrcHandle = WinGetHandle("Notepad");
+                //osuIrcHandle = WinGetHandle("chat4osu");
+                osuIrcHandle = WinGetHandle("Notepad");
 
                 if (osuIrcHandle.Equals(IntPtr.Zero))
                 {
@@ -128,7 +128,7 @@ namespace OsuTourneyRefHelper
             MapPoolManager aux = new MapPoolManager();
             using (WebClient wc = new WebClient())
             {
-
+                var json = wc.DownloadString("");
             }
         }
         void SetupStageComBox()
