@@ -20,6 +20,7 @@ using OsuTourneyRefHelper.Data.Settings;
 using OsuTourneyRefHelper.Data.Mappool;
 using OsuTourneyRefHelper.Data.Commands;
 using System.Net;
+using AutoUpdaterDotNET;
 
 namespace OsuTourneyRefHelper
 {
@@ -628,6 +629,12 @@ namespace OsuTourneyRefHelper
         {
             //Do the explorer thing
             SavePool();
+        }
+
+        private void CheckUpdate_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Checando updates como no");
+            AutoUpdater.Start("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/AutoUpdater.xml");
         }
     }
 }
