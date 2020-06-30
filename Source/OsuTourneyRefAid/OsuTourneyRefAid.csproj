@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -78,6 +78,7 @@
     <Compile Include="Data\Commands\CommandManager.cs" />
     <Compile Include="Data\Mappool\MapPool.cs" />
     <Compile Include="Data\Mappool\MapPoolManager.cs" />
+    <Compile Include="Data\Settings\ProgramSettings.cs" />
     <Compile Include="Data\Settings\SettingsCollection.cs" />
     <Compile Include="Data\Settings\SettingsManager.cs" />
     <Compile Include="Data\Settings\TournamentSettings.cs" />
@@ -89,6 +90,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CommandsForm.resx">
       <DependentUpon>CommandsForm.cs</DependentUpon>
     </EmbeddedResource>

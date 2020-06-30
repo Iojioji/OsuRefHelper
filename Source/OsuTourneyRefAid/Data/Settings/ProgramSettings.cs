@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace OsuTourneyRefHelper.Data.Settings
 {
-    public class SettingsCollection
+    public class ProgramSettings
     {
-        public ProgramSettings Program;
-        public TournamentSettings Tournament;
+        public bool DebuggingToNotepad;
+
+        public string PoolURL;
     }
 }

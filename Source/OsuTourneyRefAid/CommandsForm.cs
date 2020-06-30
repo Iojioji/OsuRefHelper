@@ -82,6 +82,11 @@ namespace OsuTourneyRefHelper
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Initialize();
+        }
+
+        public void Initialize()
+        {
             //CreateDummyPool();
             SettingsManager.Settings = LoadSettings();
             commManager = new CommandManager();
@@ -105,8 +110,14 @@ namespace OsuTourneyRefHelper
         {
             try
             {
-                //osuIrcHandle = WinGetHandle("chat4osu");
-                osuIrcHandle = WinGetHandle("Notepad");
+                if (SettingsManager.Settings.Program.DebuggingToNotepad)
+                {
+                    osuIrcHandle = WinGetHandle("Notepad");
+                }
+                else
+                {
+                    osuIrcHandle = WinGetHandle("chat4osu");
+                }
 
                 if (osuIrcHandle.Equals(IntPtr.Zero))
                 {
@@ -131,7 +142,7 @@ namespace OsuTourneyRefHelper
             {
                 using (WebClient wc = new WebClient())
                 {
-                    var json = wc.DownloadString("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/Mappool/Pools.json");
+                    var json = wc.DownloadString(SettingsManager.Settings.Program.PoolURL);
                     aux = LoadPool(json);
                 }
             }
@@ -626,8 +637,17 @@ namespace OsuTourneyRefHelper
         }
         private void exportSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string output = JsonConvert.SerializeObject(SettingsManager.Settings);
-            File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
+            SaveFileDialog saveSettingsDialog = new SaveFileDialog();
+            saveSettingsDialog.Filter = "JSON file|*json";
+            saveSettingsDialog.Title = "Exportar Settings";
+            saveSettingsDialog.InitialDirectory = $"{appPath}/Data";
+            if (saveSettingsDialog.ShowDialog() == DialogResult.OK)
+            {
+                Console.WriteLine(saveSettingsDialog.FileName);
+                string output = JsonConvert.SerializeObject(SettingsManager.Settings);
+                File.WriteAllText(saveSettingsDialog.FileName, JsonPrettify(output));
+            }
+
         }
         private void updatePoolToolStripMenuItem_Click(object sender, EventArgs e)
         {
