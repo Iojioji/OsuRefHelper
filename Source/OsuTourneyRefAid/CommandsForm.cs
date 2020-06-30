@@ -661,7 +661,7 @@ namespace OsuTourneyRefHelper
 
         private void CheckUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Checando updates como no");
+            MessageBox.Show("Checando updates como no\r\nSi no digo nada, es porque no hay update c:");
             AutoUpdater.Start("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/AutoUpdater.xml");
         }
     }
