@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2.2",
+  "version": "1.6.0",
   "pools": [
     {
       "Stage": "Qualifiers",
@@ -175,6 +175,660 @@
           "Artist": "Scandroid",
           "Mapper": "Lime717",
           "DiffName": "Luminosity",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Octavos",
+      "nmPool": [
+        {
+          "MapID": 76222,
+          "Title": "Steelbeak",
+          "Artist": "Capcom Sound Team",
+          "Mapper": "Mapper 31",
+          "DiffName": "31's Taiko",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1601978,
+          "Title": "memoryfactoy.lzh",
+          "Artist": "Frums",
+          "Mapper": "Nifty",
+          "DiffName": "muzukashii.jar",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2355347,
+          "Title": "BATTLE NO.1",
+          "Artist": "TANO*C Sound Team",
+          "Mapper": "Luqua",
+          "DiffName": "Luqua's Muzukashii",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 1792308,
+          "Title": "Vlcnmtr",
+          "Artist": "qebrus",
+          "Mapper": "Nifty",
+          "DiffName": "Muzukashii",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 245047,
+          "Title": "AXIO",
+          "Artist": "sakuzyo",
+          "Mapper": "lepidopodus",
+          "DiffName": "lepidon! - Muzukashii",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2169255,
+          "Title": "Scintillations",
+          "Artist": "ALEPH",
+          "Mapper": "Nardoxyribonucleic",
+          "DiffName": "Muzukashii",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 1949350,
+          "Title": "Cross Time !!",
+          "Artist": "Brandy",
+          "Mapper": "Konpaku Sariel",
+          "DiffName": "Oni",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2394030,
+          "Title": "Bad To The Bone",
+          "Artist": "George Thorogood && The Destroyers",
+          "Mapper": "Vulkin",
+          "DiffName": "Oni",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 1788424,
+          "Title": "Dango Daikazoku (TV Size)",
+          "Artist": "Chata",
+          "Mapper": "Faputa",
+          "DiffName": "Muzukashii",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2384494,
+          "Title": "Oh my god",
+          "Artist": "(G)I-DLE",
+          "Mapper": "Lyawi",
+          "DiffName": "Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 506333,
+          "Title": "Acid Burst",
+          "Artist": "Memme",
+          "Mapper": "MMzz",
+          "DiffName": "Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1001102,
+          "Title": "Din Don Dan",
+          "Artist": "Ryu ft. Mayumi Morinaga",
+          "Mapper": "aabc271",
+          "DiffName": "Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 2
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 70180,
+          "Title": "Torero",
+          "Artist": "Chayanne",
+          "Mapper": "lepidopodus",
+          "DiffName": "lepidon! - Taiko Oni",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Cuartos",
+      "nmPool": [
+        {
+          "MapID": 1062527,
+          "Title": "encounter",
+          "Artist": "Nekomata Master",
+          "Mapper": "OzzyOzrock",
+          "DiffName": "Ozzy's Oni",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1466209,
+          "Title": "Make Magic",
+          "Artist": "Lite Show Magic",
+          "Mapper": "Realazy",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 915795,
+          "Title": "Come And Get It (Razihel Remix)",
+          "Artist": "Krewella",
+          "Mapper": "hikikochan",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 696205,
+          "Title": "Bumblefuck",
+          "Artist": "Renard",
+          "Mapper": "Lost The Lights",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 154474,
+          "Title": "Karen (Short ver.)",
+          "Artist": "Otokaze",
+          "Mapper": "spboxer3",
+          "DiffName": "Taiko Oni",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1807825,
+          "Title": "Terry's Athletic Bodywash",
+          "Artist": "MowtenDoo",
+          "Mapper": "Midnaait",
+          "DiffName": "Oni",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 249026,
+          "Title": "Ame Michi",
+          "Artist": "Otokaze",
+          "Mapper": "spboxer3",
+          "DiffName": "Sp3's Taiko Oni",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 103673,
+          "Title": "Who's That Boy",
+          "Artist": "Carlito",
+          "Mapper": "Zelos",
+          "DiffName": "Zelito's Taiko",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 445961,
+          "Title": "Island Song",
+          "Artist": "Ashley Eriksson",
+          "Mapper": "sheela901",
+          "DiffName": "Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 51121,
+          "Title": "Freedom",
+          "Artist": "12 Girls Band",
+          "Mapper": "lepidopodus",
+          "DiffName": "lepidon! - Taiko Oni!",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 480687,
+          "Title": "Battle! Mew",
+          "Artist": "Junichi Masuda",
+          "Mapper": "Neku okazaki",
+          "DiffName": "Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 147485,
+          "Title": "Schrodinger's Kitten",
+          "Artist": "Hatsune Miku",
+          "Mapper": "PercetT",
+          "DiffName": "PTaiko",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 2
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 2480585,
+          "Title": "Give me a break Stop now",
+          "Artist": "Reol",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Semis",
+      "nmPool": [
+        {
+          "MapID": 1448201,
+          "Title": "After After",
+          "Artist": "Matsuda Akito",
+          "Mapper": "yuzu__rinrin",
+          "DiffName": "yzrin's Inner Oni",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1087007,
+          "Title": "Kouon Katsuzetsu-chuu Oniki Hayakuchi Test",
+          "Artist": "KimuraYP",
+          "Mapper": "JessiChan",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 944742,
+          "Title": "Get Jinxed",
+          "Artist": "Agnete Kjolsrud",
+          "Mapper": "Hanjamon",
+          "DiffName": "Inner Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 1688438,
+          "Title": "Rumble Kung-fu Showdown",
+          "Artist": "t+pazolite",
+          "Mapper": "incandescence",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 1628414,
+          "Title": "Excitebike Arena",
+          "Artist": "Fujii Shiho",
+          "Mapper": "Ascendance",
+          "DiffName": "Collab Oni",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 164075,
+          "Title": "Chocolate",
+          "Artist": "Megpoid GUMI",
+          "Mapper": "OnosakiHito",
+          "DiffName": "Ono's Taiko Oni",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 103398,
+          "Title": "A Geisha's Dream",
+          "Artist": "NAOKI feat. SMiLE.dk",
+          "Mapper": "yongtw123",
+          "DiffName": "Taiko Oni",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 378247,
+          "Title": "Koigokoro",
+          "Artist": "Primastella",
+          "Mapper": "Narwhal Prime",
+          "DiffName": "Oni",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 94237,
+          "Title": "PiPiPiPARU",
+          "Artist": "EastNewSound",
+          "Mapper": "Medi-chan",
+          "DiffName": "Medi's Avaricious Taiko",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 114270,
+          "Title": "Sleeping Butterfly",
+          "Artist": "Choucho",
+          "Mapper": "KanaRin",
+          "DiffName": "Kana's Taiko Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 872675,
+          "Title": "LANA - Kiroku no Kakera (sasakure.UK Framework Remix) -",
+          "Artist": "TOMOSUKE x Jazzin'park",
+          "Mapper": "tatsuke912",
+          "DiffName": "tatsuke's Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1350399,
+          "Title": "Shugyou Ska",
+          "Artist": "TSUNKU",
+          "Mapper": "Ayyri",
+          "DiffName": "Ayyri's Inner Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 2
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 1434856,
+          "Title": "Sonido Paposho (Pinche Cumbion)",
+          "Artist": "A Band of Bitches",
+          "Mapper": "xtrem3x",
+          "DiffName": "Noreste Oni",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Finals 1",
+      "nmPool": [
+        {
+          "MapID": 2173758,
+          "Title": "Be There",
+          "Artist": "PSYQUI",
+          "Mapper": "Genjuro",
+          "DiffName": "Inner Oni",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 158447,
+          "Title": "30's Swing Tek",
+          "Artist": "Floxytek vs Billx",
+          "Mapper": "DarkTigrus",
+          "DiffName": "Ono's Taiko Inner Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2216572,
+          "Title": "Terminal Missa",
+          "Artist": "Laur",
+          "Mapper": "Konpaku Sariel",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 157233,
+          "Title": "boot",
+          "Artist": "paraoka",
+          "Mapper": "rickyboi",
+          "DiffName": "inaba's Taiko",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        },
+        {
+          "MapID": 168807,
+          "Title": "Forgotten",
+          "Artist": "The Ghost Of 3.13",
+          "Mapper": "Blue Dragon",
+          "DiffName": "PhNyx's Taiko Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 5
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 90914,
+          "Title": "Vodka",
+          "Artist": "Korpiklaani",
+          "Mapper": "Charles445",
+          "DiffName": "DrunkDunskin's Taiko",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2115020,
+          "Title": "Birdsong",
+          "Artist": "James Landino && Kabuki",
+          "Mapper": "Nifty",
+          "DiffName": "Cygnet",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 1937119,
+          "Title": "Shukusai no Elementalia",
+          "Artist": "Ni-Sokkususu",
+          "Mapper": "Rhytoly",
+          "DiffName": "Roger's Kneesocks",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 90616,
+          "Title": "Taiko Time",
+          "Artist": "Denji Sano",
+          "Mapper": "lepidopodus",
+          "DiffName": "Taiko Inner Oni",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 76896,
+          "Title": "Yofo",
+          "Artist": "Molotov",
+          "Mapper": "Krisom",
+          "DiffName": "lepidon! - Taiko Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2504064,
+          "Title": "OOO (SUNLiGHT Mix)",
+          "Artist": "Ryu feat.moimoi",
+          "Mapper": "xtrem3x",
+          "DiffName": "Inner Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 2067126,
+          "Title": "sync",
+          "Artist": "OutPhase",
+          "Mapper": "Maeda",
+          "DiffName": "Inner Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1579867,
+          "Title": "Star Trail",
+          "Artist": "Nhato",
+          "Mapper": "Ammy",
+          "DiffName": "Inner Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 1989546,
+          "Title": "More One Night",
+          "Artist": "Chito (CV: Minase Inori), Yuuri (CV: Kubo Yurika)",
+          "Mapper": "Rhytoly",
+          "DiffName": "Blacken's Inner Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 3
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 2501923,
+          "Title": "Infernoplex",
+          "Artist": "Dimrain47",
+          "Mapper": "xtrem3x",
+          "DiffName": "Inner Oni",
           "BPM": 110,
           "Stars": 4.11,
           "Mod": 5,
