@@ -148,12 +148,16 @@ namespace OsuTourneyRefHelper
                 if (IsPoolNewer(aux.version))
                 {
                     poolManager = aux;
+                    SavePool();
+                }
+                else
+                {
+                    MessageBox.Show("No hay updates hasta ahorita, checa mas tarde");
                 }
             }
 
             //SetupStageComBox();
             SwitchToStage("Qualifiers");
-            SavePool();
         }
         bool IsPoolNewer(string newPoolVer)
         {
@@ -171,6 +175,10 @@ namespace OsuTourneyRefHelper
                 if (newNumber > currentNumber)
                 {
                     return true;
+                }
+                else if (newNumber < currentNumber)
+                {
+                    return false;
                 }
             }
             return false;
