@@ -167,7 +167,7 @@ namespace OsuTourneyRefHelper
                 }
             }
 
-            //SetupStageComBox();
+            SetupStageComBox();
             SwitchToStage("Qualifiers");
         }
         bool IsPoolNewer(string newPoolVer)
