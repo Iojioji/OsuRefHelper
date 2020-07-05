@@ -8,7 +8,7 @@ namespace OsuTourneyRefHelper.Data.Settings
 {
     public class SettingsCollection
     {
-        public ProgramSettings Program;
-        public TournamentSettings Tournament;
+        public ProgramSettings Program = new ProgramSettings();
+        public TournamentSettings Tournament = new TournamentSettings();
     }
 }

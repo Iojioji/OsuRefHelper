@@ -9,6 +9,7 @@ namespace OsuTourneyRefHelper.Data.Settings
 {
     public static class SettingsManager
     {
-        public static SettingsCollection Settings;
+        public static SettingsCollection Settings = new SettingsCollection();
+        public static string Version;
     }
 }

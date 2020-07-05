@@ -21,6 +21,9 @@ using OsuTourneyRefHelper.Data.Mappool;
 using OsuTourneyRefHelper.Data.Commands;
 using System.Net;
 using AutoUpdaterDotNET;
+using System.Xml;
+using Formatting = Newtonsoft.Json.Formatting;
+using System.Reflection;
 
 namespace OsuTourneyRefHelper
 {
@@ -83,29 +86,75 @@ namespace OsuTourneyRefHelper
         private void MainForm_Load(object sender, EventArgs e)
         {
             Initialize();
+            if (CheckForUpdates())
+            {
+                updateStripButt.BackColor = Color.Red;
+            }
+            else
+            {
+                
+            }
         }
-
+        public void Reset()
+        {
+            previousMod = "";
+            currentPool = null;
+            osuIrcHandle = IntPtr.Zero;
+            isSending = false;
+        }
         public void Initialize()
         {
-            //CreateDummyPool();
-            SettingsManager.Settings = LoadSettings();
-            commManager = new CommandManager();
+            Assembly assembly = Assembly.GetExecutingAssembly();
+            FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
+            string assemblyVersion = fvi.FileVersion;
+
+            SettingsManager.Version = assemblyVersion;
+            InitializeSettings();
             LoadPools();
 
-            Console.WriteLine(poolManager.version);
+            //Console.WriteLine(poolManager.version);
             SetupStageComBox();
 
-            Console.WriteLine(poolManager.ToString());
-
-            LinkIirc();
+            //Console.WriteLine(poolManager.ToString());
 
             defaultStageBackColor = stageComBox.BackColor;
-            this.Text = $"{SettingsManager.Settings.Tournament.TourneyAcronym} Ref Helper";
 
             //string output = JsonConvert.SerializeObject(poolManager);
             //File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
         }
+        void InitializeSettings()
+        {
+            //CreateDummyPool();
+            SettingsManager.Settings = LoadSettings();
+            commManager = new CommandManager();
 
+            LinkIirc();
+
+            ChangeWindowTitle();
+        }
+        bool CheckForUpdates()
+        {
+            XmlTextReader reader = new XmlTextReader("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/AutoUpdater.xml");
+            bool nextIsVersion = false;
+            string version = "";
+            while (reader.Read())
+            { 
+                if (nextIsVersion && reader.NodeType == XmlNodeType.Text)
+                {
+                    version = reader.Value;
+                    break;
+                }
+                if (reader.NodeType == XmlNodeType.Element && reader.Name == "version")
+                {
+                    Console.WriteLine("Hijuesu el siguiente es el bueno");
+                    nextIsVersion = true;
+                }
+            }
+            Console.WriteLine($"Latest version is '{version}', current is '{SettingsManager.Version}'");
+            
+
+            return IsVersionNewer(SettingsManager.Version, version);
+        }
         void LinkIirc()
         {
             try
@@ -156,7 +205,7 @@ namespace OsuTourneyRefHelper
             }
             else
             {
-                if (IsPoolNewer(aux.version))
+                if (IsVersionNewer(poolManager.version, aux.version))
                 {
                     poolManager = aux;
                     SavePool();
@@ -170,10 +219,10 @@ namespace OsuTourneyRefHelper
             SetupStageComBox();
             SwitchToStage("Qualifiers");
         }
-        bool IsPoolNewer(string newPoolVer)
+        bool IsVersionNewer(string currentVersion, string newVersion)
         {
-            string[] currentVer = poolManager.version.Split('.');
-            string[] newVer = newPoolVer.Split('.');
+            string[] currentVer = currentVersion.Split('.');
+            string[] newVer = newVersion.Split('.');
 
             if (currentVer.Length < newVer.Length)
             {
@@ -244,6 +293,10 @@ namespace OsuTourneyRefHelper
             {
                 File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
             }
+        }
+        void ChangeWindowTitle()
+        {
+            this.Text = $"{SettingsManager.Settings.Tournament.TourneyAcronym} Ref Helper{(SettingsManager.Settings.Program.DebuggingToNotepad ? "   ! ! ! DEBUGGING TO NOTEPAD ! ! !" : "" )}";
         }
         SettingsCollection LoadSettings()
         {
@@ -346,25 +399,6 @@ namespace OsuTourneyRefHelper
                 tabMenu.TabPages.Remove(dtPage);
                 tabMenu.TabPages.Remove(fmPage);
                 tabMenu.TabPages.Remove(tbPage);
-            }
-        }
-
-        private static bool isIEServerWindow(IntPtr hWnd)
-        {
-            int nRet;
-            // Pre-allocate 256 characters, since this is the maximum class name length.
-            StringBuilder ClassName = new StringBuilder(256);
-            //Get the window class name
-            nRet = GetClassName(hWnd, ClassName, ClassName.Capacity);
-            if (nRet != 0)
-            {
-                Console.WriteLine($"Class: {ClassName.ToString()}");
-                return (string.Compare(ClassName.ToString(), "Internet Explorer_Server", true, CultureInfo.InvariantCulture) == 0);
-            }
-            else
-            {
-                Console.WriteLine("No nRet");
-                return false;
             }
         }
 
@@ -473,9 +507,11 @@ namespace OsuTourneyRefHelper
                             await Task.Delay(125);
                             if (autoSend)
                             {
+                                Console.WriteLine("Disque mandando enter dice el vato");
                                 SendKeys.Send("{ENTER}");
                                 await Task.Delay(30);
                             }
+                            Console.WriteLine($"Message sent '{input}'");
                         }
                     }
                     else
@@ -514,6 +550,7 @@ namespace OsuTourneyRefHelper
             return hWnd;
         }
 
+        #region events
         private void SwitchStage(object sender, EventArgs e)
         {
             //Console.WriteLine($"Switched stage to <{stageComBox.SelectedItem}>");
@@ -664,5 +701,18 @@ namespace OsuTourneyRefHelper
             MessageBox.Show("Checando updates como no\r\nSi no digo nada, es porque no hay update c:");
             AutoUpdater.Start("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/AutoUpdater.xml");
         }
+
+        private void OpenPreferences_Click(object sender, EventArgs e)
+        {
+            SettingsForm settForm = new SettingsForm();
+            Console.WriteLine("Opening the thing");
+            settForm.ShowDialog();
+
+            Console.WriteLine("Closed the thing");
+
+            Initialize();
+        }
+        #endregion
+
     }
 }

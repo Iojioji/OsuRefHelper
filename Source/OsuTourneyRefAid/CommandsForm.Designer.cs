@@ -63,16 +63,16 @@
             this.mpaborttimerButt = new System.Windows.Forms.Button();
             this.mptimer = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.fileStripButt = new System.Windows.Forms.ToolStripDropDownButton();
             this.exportSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsStripButt = new System.Windows.Forms.ToolStripDropDownButton();
             this.poolStripButt = new System.Windows.Forms.ToolStripDropDownButton();
             this.poolEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updatePoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.importPoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportPoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsStripButt = new System.Windows.Forms.ToolStripButton();
+            this.updateStripButt = new System.Windows.Forms.ToolStripButton();
             this.tabMenu.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.generalButtFlowLayout.SuspendLayout();
@@ -447,25 +447,14 @@
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileStripButt,
-            this.settingsStripButt,
             this.poolStripButt,
-            this.toolStripButton1});
+            this.settingsStripButt,
+            this.updateStripButt});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(562, 25);
             this.toolStrip1.TabIndex = 8;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(49, 22);
-            this.toolStripButton1.Text = "Update";
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
-            this.toolStripButton1.Click += new System.EventHandler(this.CheckUpdate_Click);
             // 
             // fileStripButt
             // 
@@ -481,19 +470,9 @@
             // exportSettingsToolStripMenuItem
             // 
             this.exportSettingsToolStripMenuItem.Name = "exportSettingsToolStripMenuItem";
-            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.exportSettingsToolStripMenuItem.Text = "Export Settings";
             this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.exportSettingsToolStripMenuItem_Click);
-            // 
-            // settingsStripButt
-            // 
-            this.settingsStripButt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.settingsStripButt.Enabled = false;
-            this.settingsStripButt.Image = ((System.Drawing.Image)(resources.GetObject("settingsStripButt.Image")));
-            this.settingsStripButt.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.settingsStripButt.Name = "settingsStripButt";
-            this.settingsStripButt.Size = new System.Drawing.Size(62, 22);
-            this.settingsStripButt.Text = "Settings";
             // 
             // poolStripButt
             // 
@@ -514,26 +493,26 @@
             // 
             this.poolEditorToolStripMenuItem.Enabled = false;
             this.poolEditorToolStripMenuItem.Name = "poolEditorToolStripMenuItem";
-            this.poolEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.poolEditorToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.poolEditorToolStripMenuItem.Text = "Pool Editor";
             // 
             // updatePoolToolStripMenuItem
             // 
             this.updatePoolToolStripMenuItem.Name = "updatePoolToolStripMenuItem";
-            this.updatePoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updatePoolToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.updatePoolToolStripMenuItem.Text = "Update Pool";
             this.updatePoolToolStripMenuItem.Click += new System.EventHandler(this.updatePoolToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
             // 
             // importPoolToolStripMenuItem
             // 
             this.importPoolToolStripMenuItem.Enabled = false;
             this.importPoolToolStripMenuItem.Name = "importPoolToolStripMenuItem";
-            this.importPoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importPoolToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.importPoolToolStripMenuItem.Text = "Import Pool";
             this.importPoolToolStripMenuItem.Click += new System.EventHandler(this.importPoolToolStripMenuItem_Click);
             // 
@@ -541,8 +520,29 @@
             // 
             this.exportPoolToolStripMenuItem.Enabled = false;
             this.exportPoolToolStripMenuItem.Name = "exportPoolToolStripMenuItem";
-            this.exportPoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportPoolToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.exportPoolToolStripMenuItem.Text = "Export Pool";
+            // 
+            // settingsStripButt
+            // 
+            this.settingsStripButt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.settingsStripButt.Image = ((System.Drawing.Image)(resources.GetObject("settingsStripButt.Image")));
+            this.settingsStripButt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.settingsStripButt.Name = "settingsStripButt";
+            this.settingsStripButt.Size = new System.Drawing.Size(72, 22);
+            this.settingsStripButt.Text = "Preferences";
+            this.settingsStripButt.Click += new System.EventHandler(this.OpenPreferences_Click);
+            // 
+            // updateStripButt
+            // 
+            this.updateStripButt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.updateStripButt.Image = ((System.Drawing.Image)(resources.GetObject("updateStripButt.Image")));
+            this.updateStripButt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.updateStripButt.Name = "updateStripButt";
+            this.updateStripButt.Size = new System.Drawing.Size(49, 22);
+            this.updateStripButt.Text = "Update";
+            this.updateStripButt.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.updateStripButt.Click += new System.EventHandler(this.CheckUpdate_Click);
             // 
             // MainForm
             // 
@@ -617,16 +617,16 @@
         private System.Windows.Forms.Button mpaborttimerButt;
         private System.Windows.Forms.Button mptimer;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton updateStripButt;
         private System.Windows.Forms.ToolStripDropDownButton fileStripButt;
         private System.Windows.Forms.ToolStripMenuItem exportSettingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripDropDownButton settingsStripButt;
         private System.Windows.Forms.ToolStripDropDownButton poolStripButt;
         private System.Windows.Forms.ToolStripMenuItem poolEditorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updatePoolToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem importPoolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportPoolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton settingsStripButt;
     }
 }
 
