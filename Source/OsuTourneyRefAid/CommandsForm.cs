@@ -88,7 +88,7 @@ namespace OsuTourneyRefHelper
             Initialize();
             if (CheckForUpdates())
             {
-                updateStripButt.BackColor = Color.Red;
+                updateStripButt.BackColor = Color.LightGreen;
             }
             else
             {

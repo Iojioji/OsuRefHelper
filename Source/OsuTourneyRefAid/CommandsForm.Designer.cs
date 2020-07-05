@@ -535,6 +535,7 @@
             // 
             // updateStripButt
             // 
+            this.updateStripButt.BackColor = System.Drawing.SystemColors.Control;
             this.updateStripButt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.updateStripButt.Image = ((System.Drawing.Image)(resources.GetObject("updateStripButt.Image")));
             this.updateStripButt.ImageTransparentColor = System.Drawing.Color.Magenta;
