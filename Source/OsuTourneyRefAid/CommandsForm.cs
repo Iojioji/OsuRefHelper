@@ -24,6 +24,7 @@ using AutoUpdaterDotNET;
 using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 using System.Reflection;
+using OsuTourneyRefHelper.Properties;
 
 namespace OsuTourneyRefHelper
 {
@@ -86,13 +87,14 @@ namespace OsuTourneyRefHelper
         private void MainForm_Load(object sender, EventArgs e)
         {
             Initialize();
-            if (CheckForUpdates())
+            if (CheckForProgramUpdate())
             {
                 updateStripButt.BackColor = Color.LightGreen;
             }
-            else
+            if (CheckForPoolUpdate())
             {
-                
+                poolStripButt.BackColor = Color.LightGreen;
+                updatePoolToolStripMenuItem.BackColor = Color.LightGreen;
             }
         }
         public void Reset()
@@ -113,7 +115,7 @@ namespace OsuTourneyRefHelper
             LoadPools();
 
             //Console.WriteLine(poolManager.version);
-            SetupStageComBox();
+            //SetupStageComBox();
 
             //Console.WriteLine(poolManager.ToString());
 
@@ -132,13 +134,13 @@ namespace OsuTourneyRefHelper
 
             ChangeWindowTitle();
         }
-        bool CheckForUpdates()
+        bool CheckForProgramUpdate()
         {
             XmlTextReader reader = new XmlTextReader("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/AutoUpdater.xml");
             bool nextIsVersion = false;
             string version = "";
             while (reader.Read())
-            { 
+            {
                 if (nextIsVersion && reader.NodeType == XmlNodeType.Text)
                 {
                     version = reader.Value;
@@ -151,9 +153,63 @@ namespace OsuTourneyRefHelper
                 }
             }
             Console.WriteLine($"Latest version is '{version}', current is '{SettingsManager.Version}'");
-            
+            //MessageBox.Show($"Latest version is '{version}', current is '{SettingsManager.Version}'");
 
             return IsVersionNewer(SettingsManager.Version, version);
+        }
+        bool CheckForPoolUpdate()
+        {
+            MapPoolManager aux = new MapPoolManager();
+            bool result = false;
+            if (!string.IsNullOrEmpty(SettingsManager.Settings.Program.PoolURL))
+            {
+                try
+                {
+                    using (WebClient wc = new WebClient())
+                    {
+                        var json = wc.DownloadString(SettingsManager.Settings.Program.PoolURL);
+                        aux = LoadPool(json);
+                    }
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show($"Hijuesu, algo se rompio intentando descargar el pool de \r\n'{SettingsManager.Settings.Program.PoolURL}'\r\n\r\nMandale esto al menso del Iojioji\r\n\r\n{e.Message}", "Error inesperado al descargar el pool O:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return false;
+                }
+                if (poolManager.version == null)
+                {
+                    result = true;
+                }
+                else
+                {
+                    return IsVersionNewer(poolManager.version, aux.version);
+                }
+
+                return result;
+            }
+            else
+            {
+                //Hard set the current poolmanager to something else just to avoid null exceptions.
+                //Move this code to somewhere less obfuscated pls.
+
+                if (poolManager.version == null)
+                {
+                    poolManager.version = "0.0.0";
+                }
+                if (poolManager.pools.Count == 0)
+                {
+                    poolManager.pools.Add(new MapPool
+                    {
+                        Stage = "Crea tu pool pls",
+                        nmPool = new List<Beatmap>(),
+                        hdPool = new List<Beatmap>(),
+                        hrPool = new List<Beatmap>(),
+                        dtPool = new List<Beatmap>(),
+                    });
+                }
+                return false;
+            }
         }
         void LinkIirc()
         {
@@ -184,43 +240,38 @@ namespace OsuTourneyRefHelper
                 MessageBox.Show(ex.Message);
             }
         }
-        void UpdateMappool()
+        void UpdateMappool(bool manualRequest = false)
         {
-            MapPoolManager aux = new MapPoolManager();
-            try
+            if (CheckForPoolUpdate())
             {
-                using (WebClient wc = new WebClient())
+                MapPoolManager aux = new MapPoolManager();
+                try
                 {
-                    var json = wc.DownloadString(SettingsManager.Settings.Program.PoolURL);
-                    aux = LoadPool(json);
+                    using (WebClient wc = new WebClient())
+                    {
+                        var json = wc.DownloadString(SettingsManager.Settings.Program.PoolURL);
+                        aux = LoadPool(json);
+                    }
                 }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show($"Hijuesu, algo se rompio intentando descargar el pool de <link>\r\nMandale esto al menso del Iojioji\r\n\r\n{e.Message}", "Error inesperado al descargar el pool O:", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            if (poolManager.version == null)
-            {
+                catch (Exception e)
+                {
+                    MessageBox.Show($"Hijuesu, algo se rompio intentando descargar el pool de <link>\r\nMandale esto al menso del Iojioji\r\n\r\n{e.Message}", "Error inesperado al descargar el pool O:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 poolManager = aux;
+                SavePool();
             }
-            else
+            else if (manualRequest)
             {
-                if (IsVersionNewer(poolManager.version, aux.version))
-                {
-                    poolManager = aux;
-                    SavePool();
-                }
-                else
-                {
-                    MessageBox.Show("No hay updates hasta ahorita, checa mas tarde");
-                }
+                MessageBox.Show("No hay updates ahorita, checa mas tarde");
             }
 
             SetupStageComBox();
-            SwitchToStage("Qualifiers");
+            //SwitchToStage("Qualifiers");
+            SwitchToStage(0);
         }
         bool IsVersionNewer(string currentVersion, string newVersion)
         {
+            Console.WriteLine($"Current Version: {currentVersion}, New Version: {newVersion}");
             string[] currentVer = currentVersion.Split('.');
             string[] newVer = newVersion.Split('.');
 
@@ -296,7 +347,7 @@ namespace OsuTourneyRefHelper
         }
         void ChangeWindowTitle()
         {
-            this.Text = $"{SettingsManager.Settings.Tournament.TourneyAcronym} Ref Helper{(SettingsManager.Settings.Program.DebuggingToNotepad ? "   ! ! ! DEBUGGING TO NOTEPAD ! ! !" : "" )}";
+            this.Text = $"{SettingsManager.Settings.Tournament.TourneyAcronym} Ref Helper{(SettingsManager.Settings.Program.DebuggingToNotepad ? "   ! ! ! DEBUGGING TO NOTEPAD ! ! !" : "")}";
         }
         SettingsCollection LoadSettings()
         {
@@ -316,8 +367,22 @@ namespace OsuTourneyRefHelper
             }
             else
             {
-                MessageBox.Show($"No se encontro el archivo de los settings\r\nAsegurate que se encuentre en '{appPath}Data' un archivo llamado Settings.json", "No pude cargar el pool :'c", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                MessageBox.Show($"No se encontro un archivo de configuracion valido, por favor configura el programa dando click en \"Preferencias\"", "Ref Helper", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ProgramSettings auxProgSett = new ProgramSettings() {
+                    DebuggingToNotepad = false,
+                    PoolURL = ""
+                };
+                TournamentSettings auxTourSett = new TournamentSettings() {
+                    TourneyAcronym = "TRN",
+                    TeamMode = TeamMode.TeamVs,
+                    Scoring = ScoreMode.ScoreV2,
+                    TeamSize = 2
+                };
+
+                aux.Program = auxProgSett;
+                aux.Tournament = auxTourSett;
+
+                return aux;
             }
         }
         void CreateDummyPool()
@@ -374,31 +439,50 @@ namespace OsuTourneyRefHelper
                 MessageBox.Show($"Hijuesu, algo se rompio intentando cambiar de pool\r\nMandale esto al menso del Iojioji\r\n\r\n{e.Message}", "Error inesperado al cambiar de pool O:", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        void ShowTabPages(bool show)
+        public void SwitchToStage(int stageToSwitchTo)
         {
-            if (show)
+            if (poolManager.pools.Count > stageToSwitchTo)
             {
-                if (currentPool.nmPool.Count > 0)
-                    tabMenu.TabPages.Add(nmPage);
-                if (currentPool.hdPool.Count > 0)
-                    tabMenu.TabPages.Add(hdPage);
-                if (currentPool.hrPool.Count > 0)
-                    tabMenu.TabPages.Add(hrPage);
-                if (currentPool.dtPool.Count > 0)
-                    tabMenu.TabPages.Add(dtPage);
-                if (currentPool.fmPool.Count > 0)
-                    tabMenu.TabPages.Add(fmPage);
-                if (currentPool.tbPool.Count > 0)
-                    tabMenu.TabPages.Add(tbPage);
+                currentPool = poolManager.pools[stageToSwitchTo];
+                commManager.CurrentPool = currentPool;
+                ShowTabPages(false);
+                ShowTabPages(true);
+                RemoveAllButtonsFromTabs();
+                AddButtonsToTabs();
             }
             else
             {
-                tabMenu.TabPages.Remove(nmPage);
-                tabMenu.TabPages.Remove(hdPage);
-                tabMenu.TabPages.Remove(hrPage);
-                tabMenu.TabPages.Remove(dtPage);
-                tabMenu.TabPages.Remove(fmPage);
-                tabMenu.TabPages.Remove(tbPage);
+                Console.WriteLine("Error! Trying to access a pool that doesn't exist!");
+            }
+        }
+        void ShowTabPages(bool show)
+        {
+            if (currentPool != null)
+            {
+                if (show)
+                {
+                    if (currentPool.nmPool.Count > 0)
+                        tabMenu.TabPages.Add(nmPage);
+                    if (currentPool.hdPool.Count > 0)
+                        tabMenu.TabPages.Add(hdPage);
+                    if (currentPool.hrPool.Count > 0)
+                        tabMenu.TabPages.Add(hrPage);
+                    if (currentPool.dtPool.Count > 0)
+                        tabMenu.TabPages.Add(dtPage);
+                    if (currentPool.fmPool.Count > 0)
+                        tabMenu.TabPages.Add(fmPage);
+                    if (currentPool.tbPool.Count > 0)
+                        tabMenu.TabPages.Add(tbPage);
+                }
+                else
+                {
+                    tabMenu.TabPages.Remove(nmPage);
+                    tabMenu.TabPages.Remove(hdPage);
+                    tabMenu.TabPages.Remove(hrPage);
+                    tabMenu.TabPages.Remove(dtPage);
+                    tabMenu.TabPages.Remove(fmPage);
+                    tabMenu.TabPages.Remove(tbPage);
+                }
             }
         }
 
@@ -417,7 +501,7 @@ namespace OsuTourneyRefHelper
             {
                 if (poolManager != null)
                 {
-                    MessageBox.Show($"Ay, tu pool no existe\r\nMandale esto al menso del Iojioji\r\n\r\n{poolManager.ToString()}", "Error de pool al crear los botoncitos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show($"Ay, tu pool no existe\r\nMandale esto al menso del Iojioji\r\n\r\n{poolManager}", "Error de pool al crear los botoncitos", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -688,7 +772,7 @@ namespace OsuTourneyRefHelper
         }
         private void updatePoolToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UpdateMappool();
+            UpdateMappool(true);
         }
         private void importPoolToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -698,8 +782,16 @@ namespace OsuTourneyRefHelper
 
         private void CheckUpdate_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Checando updates como no\r\nSi no digo nada, es porque no hay update c:");
-            AutoUpdater.Start("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/AutoUpdater.xml");
+            if (CheckForProgramUpdate())
+            {
+                MessageBox.Show("Hay updates como no\r\nNomas picale a descargar y asi");
+                AutoUpdater.Start("https://raw.githubusercontent.com/Iojioji/OsurRefHelper/dev/AutoUpdater.xml");
+
+            }
+            else
+            {
+                MessageBox.Show("No hay updates pendientes chavo");
+            }
         }
 
         private void OpenPreferences_Click(object sender, EventArgs e)
