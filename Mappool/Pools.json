@@ -1,6 +1,6 @@
 {
   "version": "1.7.0",
-  "pools": [
+  "pools_old": [
     {
       "Stage": "Qualifiers",
       "nmPool": [
@@ -1071,5 +1071,6 @@
         }
       ]
     }
-  ]
+  ],
+  "stages": []
 }
