@@ -19,6 +19,7 @@ namespace OsuTourneyRefHelper.Controls
         List<CheckBox> modList = new List<CheckBox>();
         public Panel parentPanel;
         public Button addMapButt;
+        public TextBox sectionName;
         public GroupBox stageModsGroBox;
         public Label sectionNameLbl;
 
@@ -33,12 +34,27 @@ namespace OsuTourneyRefHelper.Controls
             backgroundPanel = new Panel();
             backgroundPanel.SuspendLayout();
 
-            backgroundPanel.BackColor = Color.Aquamarine;
+            backgroundPanel.BackColor = SystemColors.Control;
             backgroundPanel.Name = $"{assignedSection.Name}-backPanel";
             backgroundPanel.Margin = new Padding(0);
             backgroundPanel.Size = new Size(640, 94);
             backgroundPanel.Location = new Point(0, 300);
+            backgroundPanel.BorderStyle = BorderStyle.FixedSingle;
             parentPanel.Controls.Add(backgroundPanel);
+
+            sectionName = new TextBox();
+            sectionName.Location = new Point(6, 19);
+            sectionName.Name = $"sectionNameTexBox-{assignedSection.Name}";
+            sectionName.Text = assignedSection.Name;
+            sectionName.Size = new Size(120, 20);
+            backgroundPanel.Controls.Add(sectionName);
+
+            sectionNameLbl = new Label();
+            sectionNameLbl.AutoSize = true;
+            sectionNameLbl.Location = new Point(3, 3);
+            sectionNameLbl.Size = new Size(112, 13);
+            sectionNameLbl.Text = "Nombre de la seccion";
+            backgroundPanel.Controls.Add(sectionNameLbl);
 
             addMapButt = new Button();
             addMapButt.Location = new Point(6, 44);

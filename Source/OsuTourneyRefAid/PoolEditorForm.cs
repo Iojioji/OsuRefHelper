@@ -32,6 +32,7 @@ namespace OsuTourneyRefHelper.Data
         {
             isPremium = !string.IsNullOrEmpty(SettingsManager.ApiKey);
             //LoadPools();
+            sectionInfoPanel.Visible = false;
         }
         public void SetPool(MapPoolManager toUse)
         {

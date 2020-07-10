@@ -1,5 +1,5 @@
 {
-  "version": "1.6.0",
+  "version": "1.7.0",
   "pools": [
     {
       "Stage": "Qualifiers",
@@ -829,6 +829,241 @@
           "Artist": "Dimrain47",
           "Mapper": "xtrem3x",
           "DiffName": "Inner Oni",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Grand Finals",
+      "nmPool": [
+        {
+          "MapID": 1519305,
+          "Title": "ERROR CODE",
+          "Artist": "C-Show",
+          "Mapper": "incandescence",
+          "DiffName": "ERROR 429",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 374422,
+          "Title": "Zetsubou plantation",
+          "Artist": "Yousei Teikoku",
+          "Mapper": "OnosakiHito",
+          "DiffName": "Ono's Taiko Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 1319599,
+          "Title": "Doki-Doki",
+          "Artist": "Thaehan",
+          "Mapper": "JUDYDANNY",
+          "DiffName": "JuDa's Inner Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 1722197,
+          "Title": "Sarutobi Champion is Sessha",
+          "Artist": "Project B",
+          "Mapper": "Charlotte",
+          "DiffName": "Inner Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        },
+        {
+          "MapID": 1489676,
+          "Title": "Lyrith -Meikyuu Lyrith-",
+          "Artist": "yumemidoll",
+          "Mapper": "Rhytoly",
+          "DiffName": "Inner Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 5
+        },
+        {
+          "MapID": 85127,
+          "Title": "reunion"
+          "Artist": "Tatsh",
+          "Mapper": "lepidopodus",
+          "DiffName": "lepidon! - Taiko Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 6
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 685029,
+          "Title": "Ende",
+          "Artist": "bj.HaLo",
+          "Mapper": "Lost The Lights",
+          "DiffName": "LTL's Inner Taiko",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1465550,
+          "Title": "Extra Mode (DJ Myosuke Remix)",
+          "Artist": "USAO",
+          "Mapper": "jyake",
+          "DiffName": "Inner Oni",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 112916,
+          "Title": "Homework Crisis",
+          "Artist": "Hatsune Miku",
+          "Mapper": "Backfire",
+          "DiffName": "Backfire's Taiko Oni",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 3
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 1959517,
+          "Title": "GOODWORLD",
+          "Artist": "EBIMAYO",
+          "Mapper": "komasy",
+          "DiffName": "GOODWORLD",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2120823,
+          "Title": "Multitalents",
+          "Artist": "PSYQUI",
+          "Mapper": "Genjuro",
+          "DiffName": "Inner Oni",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2514740,
+          "Title": "Indoor Kei Nara Trackmaker (curryrice Remix)",
+          "Artist": "Yunomi && nicamoq",
+          "Mapper": "xtrem3x",
+          "DiffName": "Innermeikah",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 3
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 2201615,
+          "Title": "Let You Go (Original Mix)",
+          "Artist": "MYLK",
+          "Mapper": "Nepuri",
+          "DiffName": "Release",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 157540,
+          "Title": "I Go Crazy Because of You",
+          "Artist": "T-ara",
+          "Mapper": "Kurai",
+          "DiffName": "Kurai's Taiko Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 180179,
+          "Title": "Over the Clouds",
+          "Artist": "alan",
+          "Mapper": "CoroQuetz",
+          "DiffName": "CQ's Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 3
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 32801,
+          "Title": "Tenjiku2000",
+          "Artist": "Taiko no Tatsujin",
+          "Mapper": "arken1015",
+          "DiffName": "Taiko Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 941681,
+          "Title": "Tits or get the fuck out!!",
+          "Artist": "Morimori Atsushi",
+          "Mapper": "KinomiCandy",
+          "DiffName": "Kinomi's Inner Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2514078,
+          "Title": "Xv1v1@84{1-1!",
+          "Artist": "Kobaryo feat. blaxervant",
+          "Mapper": "xtrem3x",
+          "DiffName": "inn3rx",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 566347,
+          "Title": "Chronostasis",
+          "Artist": "LeaF",
+          "Mapper": "DakeDekaane",
+          "DiffName": "Inner Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 4
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 1866004,
+          "Title": "lastly mote in the truth",
+          "Artist": "t+pazolite",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
           "BPM": 110,
           "Stars": 4.11,
           "Mod": 5,

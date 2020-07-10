@@ -108,14 +108,13 @@
             // 
             // stageBackPanel
             // 
-            this.stageBackPanel.AutoScroll = true;
             this.stageBackPanel.AutoSize = true;
             this.stageBackPanel.Controls.Add(this.stageInfoPanel);
             this.stageBackPanel.Controls.Add(this.sectionGeneralPanel);
             this.stageBackPanel.Location = new System.Drawing.Point(0, 0);
             this.stageBackPanel.Margin = new System.Windows.Forms.Padding(0);
             this.stageBackPanel.Name = "stageBackPanel";
-            this.stageBackPanel.Size = new System.Drawing.Size(640, 293);
+            this.stageBackPanel.Size = new System.Drawing.Size(640, 139);
             this.stageBackPanel.TabIndex = 5;
             // 
             // stageInfoPanel
@@ -149,6 +148,7 @@
             // sectionInfoPanel
             // 
             this.sectionInfoPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.sectionInfoPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sectionInfoPanel.Controls.Add(this.addMapButt);
             this.sectionInfoPanel.Controls.Add(this.stageModGroBox);
             this.sectionInfoPanel.Controls.Add(this.sectionNameTexBox);
@@ -306,7 +306,7 @@
             // 
             this.addSectionPanel.BackColor = System.Drawing.SystemColors.Control;
             this.addSectionPanel.Controls.Add(this.addSectionButt);
-            this.addSectionPanel.Location = new System.Drawing.Point(0, 293);
+            this.addSectionPanel.Location = new System.Drawing.Point(0, 139);
             this.addSectionPanel.Margin = new System.Windows.Forms.Padding(0);
             this.addSectionPanel.Name = "addSectionPanel";
             this.addSectionPanel.Size = new System.Drawing.Size(640, 42);
@@ -337,12 +337,14 @@
             // 
             // sectionGeneralPanel
             // 
+            this.sectionGeneralPanel.AutoSize = true;
+            this.sectionGeneralPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.sectionGeneralPanel.BackColor = System.Drawing.Color.Coral;
             this.sectionGeneralPanel.Controls.Add(this.sectionInfoPanel);
             this.sectionGeneralPanel.Location = new System.Drawing.Point(0, 45);
             this.sectionGeneralPanel.Margin = new System.Windows.Forms.Padding(0);
             this.sectionGeneralPanel.Name = "sectionGeneralPanel";
-            this.sectionGeneralPanel.Size = new System.Drawing.Size(640, 248);
+            this.sectionGeneralPanel.Size = new System.Drawing.Size(640, 94);
             this.sectionGeneralPanel.TabIndex = 5;
             // 
             // PoolEditorForm
@@ -355,11 +357,15 @@
             this.Controls.Add(this.addStageButton);
             this.Controls.Add(this.addStageLbl);
             this.Controls.Add(this.poolStageSelection);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "PoolEditorForm";
             this.Text = "Editor de Pools";
             this.poolMainPanel.ResumeLayout(false);
             this.poolMainPanel.PerformLayout();
             this.stageBackPanel.ResumeLayout(false);
+            this.stageBackPanel.PerformLayout();
             this.stageInfoPanel.ResumeLayout(false);
             this.stageInfoPanel.PerformLayout();
             this.sectionInfoPanel.ResumeLayout(false);

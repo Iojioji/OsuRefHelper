@@ -815,18 +815,23 @@ namespace OsuTourneyRefHelper
         }
         private void OpenPoolEditor_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(SettingsManager.ApiKey))
-            {
-                PoolEditorForm editorForm = new PoolEditorForm();
-                Console.WriteLine("Opening premium editor como no");
-                editorForm.SetPool(poolManager);
-                editorForm.ShowDialog();
 
-            }
-            else
-            {
+            PoolEditorForm editorForm = new PoolEditorForm();
+            Console.WriteLine("Opening premium editor como no");
+            editorForm.SetPool(poolManager);
+            editorForm.ShowDialog();
+            //if (!string.IsNullOrEmpty(SettingsManager.ApiKey))
+            //{
+            //    PoolEditorForm editorForm = new PoolEditorForm();
+            //    Console.WriteLine("Opening premium editor como no");
+            //    editorForm.SetPool(poolManager);
+            //    editorForm.ShowDialog();
 
-            }
+            //}
+            //else
+            //{
+
+            //}
         }
         #endregion
 
