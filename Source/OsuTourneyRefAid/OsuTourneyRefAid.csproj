@@ -73,11 +73,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Mappool\Beatmap.cs" />
+    <Compile Include="Controls\PoolSectionControls.cs" />
+    <Compile Include="Data\Mappool\BeatMap.cs" />
+    <Compile Include="Data\Mappool\Old\Beatmap_OLD.cs" />
     <Compile Include="Data\Commands\Command.cs" />
     <Compile Include="Data\Commands\CommandManager.cs" />
-    <Compile Include="Data\Mappool\MapPool.cs" />
+    <Compile Include="Data\Mappool\Old\MapPool_OLD.cs" />
     <Compile Include="Data\Mappool\MapPoolManager.cs" />
+    <Compile Include="Data\Mappool\PoolSection.cs" />
+    <Compile Include="Data\Mappool\PoolStage.cs" />
+    <Compile Include="PoolEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PoolEditorForm.Designer.cs">
+      <DependentUpon>PoolEditorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\Settings\ProgramSettings.cs" />
     <Compile Include="Data\Settings\SettingsCollection.cs" />
     <Compile Include="Data\Settings\SettingsManager.cs" />
@@ -98,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="CommandsForm.resx">
       <DependentUpon>CommandsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PoolEditorForm.resx">
+      <DependentUpon>PoolEditorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

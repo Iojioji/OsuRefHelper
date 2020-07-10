@@ -491,28 +491,28 @@
             // 
             // poolEditorToolStripMenuItem
             // 
-            this.poolEditorToolStripMenuItem.Enabled = false;
             this.poolEditorToolStripMenuItem.Name = "poolEditorToolStripMenuItem";
-            this.poolEditorToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.poolEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.poolEditorToolStripMenuItem.Text = "Pool Editor";
+            this.poolEditorToolStripMenuItem.Click += new System.EventHandler(this.OpenPoolEditor_Click);
             // 
             // updatePoolToolStripMenuItem
             // 
             this.updatePoolToolStripMenuItem.Name = "updatePoolToolStripMenuItem";
-            this.updatePoolToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.updatePoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updatePoolToolStripMenuItem.Text = "Update Pool";
             this.updatePoolToolStripMenuItem.Click += new System.EventHandler(this.updatePoolToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(136, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // importPoolToolStripMenuItem
             // 
             this.importPoolToolStripMenuItem.Enabled = false;
             this.importPoolToolStripMenuItem.Name = "importPoolToolStripMenuItem";
-            this.importPoolToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.importPoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importPoolToolStripMenuItem.Text = "Import Pool";
             this.importPoolToolStripMenuItem.Click += new System.EventHandler(this.importPoolToolStripMenuItem_Click);
             // 
@@ -520,7 +520,7 @@
             // 
             this.exportPoolToolStripMenuItem.Enabled = false;
             this.exportPoolToolStripMenuItem.Name = "exportPoolToolStripMenuItem";
-            this.exportPoolToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.exportPoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportPoolToolStripMenuItem.Text = "Export Pool";
             // 
             // settingsStripButt

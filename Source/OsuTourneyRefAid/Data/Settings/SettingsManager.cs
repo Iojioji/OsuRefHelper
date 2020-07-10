@@ -11,5 +11,6 @@ namespace OsuTourneyRefHelper.Data.Settings
     {
         public static SettingsCollection Settings = new SettingsCollection();
         public static string Version;
+        public static string ApiKey;
     }
 }

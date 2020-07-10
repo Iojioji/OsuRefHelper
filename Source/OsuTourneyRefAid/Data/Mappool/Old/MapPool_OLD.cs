@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace OsuTourneyRefHelper.Data.Mappool
 {
-    class MapPool
+    public class MapPool_OLD
     {
         public string Stage;
-        public List<Beatmap> nmPool = new List<Beatmap>();
-        public List<Beatmap> hdPool = new List<Beatmap>();
-        public List<Beatmap> hrPool = new List<Beatmap>();
-        public List<Beatmap> dtPool = new List<Beatmap>();
-        public List<Beatmap> fmPool = new List<Beatmap>();
-        public List<Beatmap> tbPool = new List<Beatmap>();
+        public List<Beatmap_OLD> nmPool = new List<Beatmap_OLD>();
+        public List<Beatmap_OLD> hdPool = new List<Beatmap_OLD>();
+        public List<Beatmap_OLD> hrPool = new List<Beatmap_OLD>();
+        public List<Beatmap_OLD> dtPool = new List<Beatmap_OLD>();
+        public List<Beatmap_OLD> fmPool = new List<Beatmap_OLD>();
+        public List<Beatmap_OLD> tbPool = new List<Beatmap_OLD>();
 
-        string WritePool(List<Beatmap> pool, string poolName)
+        string WritePool(List<Beatmap_OLD> pool, string poolName)
         {
             if (pool.Count == 0)
             {
@@ -31,16 +31,16 @@ namespace OsuTourneyRefHelper.Data.Mappool
             return aux;
         }
 
-        public Beatmap GetBeatmap(string map)
+        public Beatmap_OLD GetBeatmap(string map)
         {
             string cat = (map[0].ToString() + map[1].ToString());
             int number = int.Parse(map[2].ToString());
 
-            List<Beatmap> currentCat = GetCategory(cat);
-            Beatmap target = currentCat.Find(x => x.ModIndex == number);
+            List<Beatmap_OLD> currentCat = GetCategory(cat);
+            Beatmap_OLD target = currentCat.Find(x => x.ModIndex == number);
             return target;
         }
-        public List<Beatmap> GetCategory(string cat)
+        public List<Beatmap_OLD> GetCategory(string cat)
         {
             switch (cat)
             {

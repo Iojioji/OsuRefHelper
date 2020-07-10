@@ -31,19 +31,20 @@
             this.settingsSection = new System.Windows.Forms.ListBox();
             this.settingsTabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
-            this.tournamentTabPage = new System.Windows.Forms.TabPage();
-            this.poolUrlLabel = new System.Windows.Forms.Label();
-            this.notepadCheBox = new System.Windows.Forms.CheckBox();
-            this.saveSettingsButt = new System.Windows.Forms.Button();
             this.poolUrlTexBox = new System.Windows.Forms.TextBox();
-            this.tourneyAcronymLbl = new System.Windows.Forms.Label();
-            this.tourneyAcronymTexBox = new System.Windows.Forms.TextBox();
-            this.tourneyTMLbl = new System.Windows.Forms.Label();
-            this.tourneyTMComBox = new System.Windows.Forms.ComboBox();
+            this.notepadCheBox = new System.Windows.Forms.CheckBox();
+            this.poolUrlLabel = new System.Windows.Forms.Label();
+            this.tournamentTabPage = new System.Windows.Forms.TabPage();
+            this.tourneyPlayersNumUpDow = new System.Windows.Forms.NumericUpDown();
+            this.tourneyPlayersLbl = new System.Windows.Forms.Label();
             this.tourneySMComBox = new System.Windows.Forms.ComboBox();
             this.tourneySMLbl = new System.Windows.Forms.Label();
-            this.tourneyPlayersLbl = new System.Windows.Forms.Label();
-            this.tourneyPlayersNumUpDow = new System.Windows.Forms.NumericUpDown();
+            this.tourneyTMComBox = new System.Windows.Forms.ComboBox();
+            this.tourneyTMLbl = new System.Windows.Forms.Label();
+            this.tourneyAcronymTexBox = new System.Windows.Forms.TextBox();
+            this.tourneyAcronymLbl = new System.Windows.Forms.Label();
+            this.saveSettingsButt = new System.Windows.Forms.Button();
+            this.importSettingsButt = new System.Windows.Forms.Button();
             this.settingsTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.tournamentTabPage.SuspendLayout();
@@ -78,7 +79,7 @@
             // generalTabPage
             // 
             this.generalTabPage.AutoScroll = true;
-            this.generalTabPage.BackColor = System.Drawing.Color.White;
+            this.generalTabPage.BackColor = System.Drawing.SystemColors.Control;
             this.generalTabPage.Controls.Add(this.poolUrlTexBox);
             this.generalTabPage.Controls.Add(this.notepadCheBox);
             this.generalTabPage.Controls.Add(this.poolUrlLabel);
@@ -88,6 +89,36 @@
             this.generalTabPage.Size = new System.Drawing.Size(454, 179);
             this.generalTabPage.TabIndex = 0;
             this.generalTabPage.Text = "General";
+            // 
+            // poolUrlTexBox
+            // 
+            this.poolUrlTexBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.poolUrlTexBox.Location = new System.Drawing.Point(6, 19);
+            this.poolUrlTexBox.Name = "poolUrlTexBox";
+            this.poolUrlTexBox.Size = new System.Drawing.Size(442, 20);
+            this.poolUrlTexBox.TabIndex = 3;
+            // 
+            // notepadCheBox
+            // 
+            this.notepadCheBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.notepadCheBox.AutoSize = true;
+            this.notepadCheBox.Location = new System.Drawing.Point(310, 123);
+            this.notepadCheBox.Name = "notepadCheBox";
+            this.notepadCheBox.Size = new System.Drawing.Size(118, 17);
+            this.notepadCheBox.TabIndex = 2;
+            this.notepadCheBox.Text = "Debug To Notepad";
+            this.notepadCheBox.UseVisualStyleBackColor = true;
+            // 
+            // poolUrlLabel
+            // 
+            this.poolUrlLabel.AutoSize = true;
+            this.poolUrlLabel.BackColor = System.Drawing.Color.Transparent;
+            this.poolUrlLabel.Location = new System.Drawing.Point(6, 3);
+            this.poolUrlLabel.Name = "poolUrlLabel";
+            this.poolUrlLabel.Size = new System.Drawing.Size(60, 13);
+            this.poolUrlLabel.TabIndex = 1;
+            this.poolUrlLabel.Text = "Url del pool";
             // 
             // tournamentTabPage
             // 
@@ -107,118 +138,6 @@
             this.tournamentTabPage.TabIndex = 1;
             this.tournamentTabPage.Text = "Tournament";
             this.tournamentTabPage.UseVisualStyleBackColor = true;
-            // 
-            // poolUrlLabel
-            // 
-            this.poolUrlLabel.AutoSize = true;
-            this.poolUrlLabel.BackColor = System.Drawing.Color.Transparent;
-            this.poolUrlLabel.Location = new System.Drawing.Point(6, 3);
-            this.poolUrlLabel.Name = "poolUrlLabel";
-            this.poolUrlLabel.Size = new System.Drawing.Size(60, 13);
-            this.poolUrlLabel.TabIndex = 1;
-            this.poolUrlLabel.Text = "Url del pool";
-            // 
-            // notepadCheBox
-            // 
-            this.notepadCheBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.notepadCheBox.AutoSize = true;
-            this.notepadCheBox.Location = new System.Drawing.Point(310, 123);
-            this.notepadCheBox.Name = "notepadCheBox";
-            this.notepadCheBox.Size = new System.Drawing.Size(118, 17);
-            this.notepadCheBox.TabIndex = 2;
-            this.notepadCheBox.Text = "Debug To Notepad";
-            this.notepadCheBox.UseVisualStyleBackColor = true;
-            // 
-            // saveSettingsButt
-            // 
-            this.saveSettingsButt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveSettingsButt.Location = new System.Drawing.Point(505, 218);
-            this.saveSettingsButt.Name = "saveSettingsButt";
-            this.saveSettingsButt.Size = new System.Drawing.Size(75, 23);
-            this.saveSettingsButt.TabIndex = 3;
-            this.saveSettingsButt.Text = "Guardars";
-            this.saveSettingsButt.UseVisualStyleBackColor = true;
-            this.saveSettingsButt.Click += new System.EventHandler(this.SaveSettings_Click);
-            // 
-            // poolUrlTexBox
-            // 
-            this.poolUrlTexBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.poolUrlTexBox.Location = new System.Drawing.Point(6, 19);
-            this.poolUrlTexBox.Name = "poolUrlTexBox";
-            this.poolUrlTexBox.Size = new System.Drawing.Size(442, 20);
-            this.poolUrlTexBox.TabIndex = 3;
-            // 
-            // tourneyAcronymLbl
-            // 
-            this.tourneyAcronymLbl.AutoSize = true;
-            this.tourneyAcronymLbl.Location = new System.Drawing.Point(6, 3);
-            this.tourneyAcronymLbl.Name = "tourneyAcronymLbl";
-            this.tourneyAcronymLbl.Size = new System.Drawing.Size(51, 13);
-            this.tourneyAcronymLbl.TabIndex = 0;
-            this.tourneyAcronymLbl.Text = "Acronimo";
-            // 
-            // tourneyAcronymTexBox
-            // 
-            this.tourneyAcronymTexBox.Location = new System.Drawing.Point(6, 19);
-            this.tourneyAcronymTexBox.Name = "tourneyAcronymTexBox";
-            this.tourneyAcronymTexBox.Size = new System.Drawing.Size(64, 20);
-            this.tourneyAcronymTexBox.TabIndex = 1;
-            // 
-            // tourneyTMLbl
-            // 
-            this.tourneyTMLbl.AutoSize = true;
-            this.tourneyTMLbl.Location = new System.Drawing.Point(6, 53);
-            this.tourneyTMLbl.Name = "tourneyTMLbl";
-            this.tourneyTMLbl.Size = new System.Drawing.Size(64, 13);
-            this.tourneyTMLbl.TabIndex = 2;
-            this.tourneyTMLbl.Text = "Team Mode";
-            // 
-            // tourneyTMComBox
-            // 
-            this.tourneyTMComBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tourneyTMComBox.FormattingEnabled = true;
-            this.tourneyTMComBox.Items.AddRange(new object[] {
-            "Head To Head",
-            "Tag Coop",
-            "Team Vs",
-            "Tag Team Vs"});
-            this.tourneyTMComBox.Location = new System.Drawing.Point(6, 69);
-            this.tourneyTMComBox.Name = "tourneyTMComBox";
-            this.tourneyTMComBox.Size = new System.Drawing.Size(121, 21);
-            this.tourneyTMComBox.TabIndex = 3;
-            // 
-            // tourneySMComBox
-            // 
-            this.tourneySMComBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tourneySMComBox.FormattingEnabled = true;
-            this.tourneySMComBox.Items.AddRange(new object[] {
-            "Score",
-            "Accuracy",
-            "Combo",
-            "Score V2"});
-            this.tourneySMComBox.Location = new System.Drawing.Point(133, 69);
-            this.tourneySMComBox.Name = "tourneySMComBox";
-            this.tourneySMComBox.Size = new System.Drawing.Size(121, 21);
-            this.tourneySMComBox.TabIndex = 5;
-            // 
-            // tourneySMLbl
-            // 
-            this.tourneySMLbl.AutoSize = true;
-            this.tourneySMLbl.Location = new System.Drawing.Point(133, 53);
-            this.tourneySMLbl.Name = "tourneySMLbl";
-            this.tourneySMLbl.Size = new System.Drawing.Size(73, 13);
-            this.tourneySMLbl.TabIndex = 4;
-            this.tourneySMLbl.Text = "Scoring Mode";
-            // 
-            // tourneyPlayersLbl
-            // 
-            this.tourneyPlayersLbl.AutoSize = true;
-            this.tourneyPlayersLbl.Location = new System.Drawing.Point(260, 53);
-            this.tourneyPlayersLbl.Name = "tourneyPlayersLbl";
-            this.tourneyPlayersLbl.Size = new System.Drawing.Size(57, 13);
-            this.tourneyPlayersLbl.TabIndex = 6;
-            this.tourneyPlayersLbl.Text = "Team Size";
             // 
             // tourneyPlayersNumUpDow
             // 
@@ -243,12 +162,104 @@
             0,
             0});
             // 
+            // tourneyPlayersLbl
+            // 
+            this.tourneyPlayersLbl.AutoSize = true;
+            this.tourneyPlayersLbl.Location = new System.Drawing.Point(260, 53);
+            this.tourneyPlayersLbl.Name = "tourneyPlayersLbl";
+            this.tourneyPlayersLbl.Size = new System.Drawing.Size(57, 13);
+            this.tourneyPlayersLbl.TabIndex = 6;
+            this.tourneyPlayersLbl.Text = "Team Size";
+            // 
+            // tourneySMComBox
+            // 
+            this.tourneySMComBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tourneySMComBox.FormattingEnabled = true;
+            this.tourneySMComBox.Items.AddRange(new object[] {
+            "Score",
+            "Accuracy",
+            "Combo",
+            "Score V2"});
+            this.tourneySMComBox.Location = new System.Drawing.Point(133, 69);
+            this.tourneySMComBox.Name = "tourneySMComBox";
+            this.tourneySMComBox.Size = new System.Drawing.Size(121, 21);
+            this.tourneySMComBox.TabIndex = 5;
+            // 
+            // tourneySMLbl
+            // 
+            this.tourneySMLbl.AutoSize = true;
+            this.tourneySMLbl.Location = new System.Drawing.Point(133, 53);
+            this.tourneySMLbl.Name = "tourneySMLbl";
+            this.tourneySMLbl.Size = new System.Drawing.Size(73, 13);
+            this.tourneySMLbl.TabIndex = 4;
+            this.tourneySMLbl.Text = "Scoring Mode";
+            // 
+            // tourneyTMComBox
+            // 
+            this.tourneyTMComBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tourneyTMComBox.FormattingEnabled = true;
+            this.tourneyTMComBox.Items.AddRange(new object[] {
+            "Head To Head",
+            "Tag Coop",
+            "Team Vs",
+            "Tag Team Vs"});
+            this.tourneyTMComBox.Location = new System.Drawing.Point(6, 69);
+            this.tourneyTMComBox.Name = "tourneyTMComBox";
+            this.tourneyTMComBox.Size = new System.Drawing.Size(121, 21);
+            this.tourneyTMComBox.TabIndex = 3;
+            // 
+            // tourneyTMLbl
+            // 
+            this.tourneyTMLbl.AutoSize = true;
+            this.tourneyTMLbl.Location = new System.Drawing.Point(6, 53);
+            this.tourneyTMLbl.Name = "tourneyTMLbl";
+            this.tourneyTMLbl.Size = new System.Drawing.Size(64, 13);
+            this.tourneyTMLbl.TabIndex = 2;
+            this.tourneyTMLbl.Text = "Team Mode";
+            // 
+            // tourneyAcronymTexBox
+            // 
+            this.tourneyAcronymTexBox.Location = new System.Drawing.Point(6, 19);
+            this.tourneyAcronymTexBox.Name = "tourneyAcronymTexBox";
+            this.tourneyAcronymTexBox.Size = new System.Drawing.Size(64, 20);
+            this.tourneyAcronymTexBox.TabIndex = 1;
+            // 
+            // tourneyAcronymLbl
+            // 
+            this.tourneyAcronymLbl.AutoSize = true;
+            this.tourneyAcronymLbl.Location = new System.Drawing.Point(6, 3);
+            this.tourneyAcronymLbl.Name = "tourneyAcronymLbl";
+            this.tourneyAcronymLbl.Size = new System.Drawing.Size(51, 13);
+            this.tourneyAcronymLbl.TabIndex = 0;
+            this.tourneyAcronymLbl.Text = "Acronimo";
+            // 
+            // saveSettingsButt
+            // 
+            this.saveSettingsButt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveSettingsButt.Location = new System.Drawing.Point(505, 218);
+            this.saveSettingsButt.Name = "saveSettingsButt";
+            this.saveSettingsButt.Size = new System.Drawing.Size(75, 23);
+            this.saveSettingsButt.TabIndex = 3;
+            this.saveSettingsButt.Text = "Guardars";
+            this.saveSettingsButt.UseVisualStyleBackColor = true;
+            this.saveSettingsButt.Click += new System.EventHandler(this.SaveSettings_Click);
+            // 
+            // importSettingsButt
+            // 
+            this.importSettingsButt.Location = new System.Drawing.Point(424, 218);
+            this.importSettingsButt.Name = "importSettingsButt";
+            this.importSettingsButt.Size = new System.Drawing.Size(75, 23);
+            this.importSettingsButt.TabIndex = 4;
+            this.importSettingsButt.Text = "Importars";
+            this.importSettingsButt.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(592, 253);
+            this.Controls.Add(this.importSettingsButt);
             this.Controls.Add(this.saveSettingsButt);
             this.Controls.Add(this.settingsTabControl);
             this.Controls.Add(this.settingsSection);
@@ -284,5 +295,6 @@
         private System.Windows.Forms.Label tourneySMLbl;
         private System.Windows.Forms.NumericUpDown tourneyPlayersNumUpDow;
         private System.Windows.Forms.Label tourneyPlayersLbl;
+        private System.Windows.Forms.Button importSettingsButt;
     }
 }

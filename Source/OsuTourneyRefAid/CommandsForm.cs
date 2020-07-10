@@ -25,6 +25,7 @@ using System.Xml;
 using Formatting = Newtonsoft.Json.Formatting;
 using System.Reflection;
 using OsuTourneyRefHelper.Properties;
+using OsuTourneyRefHelper.Data;
 
 namespace OsuTourneyRefHelper
 {
@@ -44,7 +45,7 @@ namespace OsuTourneyRefHelper
 
         MapPoolManager poolManager = new MapPoolManager();
         CommandManager commManager;
-        MapPool currentPool = null;
+        MapPool_OLD currentPool = null;
         //Beatmap previousPick = null;
         string previousMod = "";
 
@@ -73,6 +74,13 @@ namespace OsuTourneyRefHelper
             else
             {
                 Console.WriteLine("Data dir exists.");
+            }
+            if (Directory.Exists(appPath + "/ApiKey"))
+            {
+                if (File.Exists($"{appPath}/ApiKey/Api.txt"))
+                {
+                    SettingsManager.ApiKey = File.ReadLines($"{appPath}/ApiKey/Api.txt").First();
+                }
             }
             errorLbl.Location = new Point(172, 26);
 
@@ -197,15 +205,15 @@ namespace OsuTourneyRefHelper
                 {
                     poolManager.version = "0.0.0";
                 }
-                if (poolManager.pools.Count == 0)
+                if (poolManager.pools_old.Count == 0)
                 {
-                    poolManager.pools.Add(new MapPool
+                    poolManager.pools_old.Add(new MapPool_OLD
                     {
                         Stage = "Crea tu pool pls",
-                        nmPool = new List<Beatmap>(),
-                        hdPool = new List<Beatmap>(),
-                        hrPool = new List<Beatmap>(),
-                        dtPool = new List<Beatmap>(),
+                        nmPool = new List<Beatmap_OLD>(),
+                        hdPool = new List<Beatmap_OLD>(),
+                        hrPool = new List<Beatmap_OLD>(),
+                        dtPool = new List<Beatmap_OLD>(),
                     });
                 }
                 return false;
@@ -305,6 +313,7 @@ namespace OsuTourneyRefHelper
                 try
                 {
                     poolManager = JsonConvert.DeserializeObject<MapPoolManager>(File.ReadAllText($"{appPath}/Data/Pools.json"));
+                    SetupStageComBox();
                 }
                 catch (Exception e)
                 {
@@ -389,23 +398,23 @@ namespace OsuTourneyRefHelper
         {
             poolManager = new MapPoolManager();
             poolManager.version = "1.0.0.0";
-            poolManager.pools.Add(new MapPool
+            poolManager.pools_old.Add(new MapPool_OLD
             {
                 Stage = "Qualifiers",
-                nmPool = new List<Beatmap>() { new Beatmap(1, "wea", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 0, 1), new Beatmap(2, "aew", "El artista", "noew", "aaaaaa la weaa", 30f, 2.44f, 0, 2) },
-                hdPool = new List<Beatmap>() { new Beatmap(3, "weaHD", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 1, 1) },
-                hrPool = new List<Beatmap>() { new Beatmap(4, "weaHR", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 2, 1) },
-                dtPool = new List<Beatmap>() { new Beatmap(5, "weaDT", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 3, 1) },
+                nmPool = new List<Beatmap_OLD>() { new Beatmap_OLD(1, "wea", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 0, 1), new Beatmap_OLD(2, "aew", "El artista", "noew", "aaaaaa la weaa", 30f, 2.44f, 0, 2) },
+                hdPool = new List<Beatmap_OLD>() { new Beatmap_OLD(3, "weaHD", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 1, 1) },
+                hrPool = new List<Beatmap_OLD>() { new Beatmap_OLD(4, "weaHR", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 2, 1) },
+                dtPool = new List<Beatmap_OLD>() { new Beatmap_OLD(5, "weaDT", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 3, 1) },
             });
-            poolManager.pools.Add(new MapPool
+            poolManager.pools_old.Add(new MapPool_OLD
             {
                 Stage = "Groups",
-                nmPool = new List<Beatmap>() { new Beatmap(1, "wea", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 0, 1), new Beatmap(2, "aew", "El artista", "noew", "aaaaaa la weaa", 30f, 2.44f, 0, 2) },
-                hdPool = new List<Beatmap>() { new Beatmap(3, "weaHD", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 1, 1) },
-                hrPool = new List<Beatmap>() { new Beatmap(4, "weaHR", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 2, 1) },
-                dtPool = new List<Beatmap>() { new Beatmap(5, "weaDT", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 3, 1) },
-                fmPool = new List<Beatmap>() { new Beatmap(6, "weaFM", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 4, 1) },
-                tbPool = new List<Beatmap>() { new Beatmap(7, "rompehuevos", "El artista", "el extrim", "a romper", 302.21f, 6.21f, 5, 1) },
+                nmPool = new List<Beatmap_OLD>() { new Beatmap_OLD(1, "wea", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 0, 1), new Beatmap_OLD(2, "aew", "El artista", "noew", "aaaaaa la weaa", 30f, 2.44f, 0, 2) },
+                hdPool = new List<Beatmap_OLD>() { new Beatmap_OLD(3, "weaHD", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 1, 1) },
+                hrPool = new List<Beatmap_OLD>() { new Beatmap_OLD(4, "weaHR", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 2, 1) },
+                dtPool = new List<Beatmap_OLD>() { new Beatmap_OLD(5, "weaDT", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 3, 1) },
+                fmPool = new List<Beatmap_OLD>() { new Beatmap_OLD(6, "weaFM", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 4, 1) },
+                tbPool = new List<Beatmap_OLD>() { new Beatmap_OLD(7, "rompehuevos", "El artista", "el extrim", "a romper", 302.21f, 6.21f, 5, 1) },
             });
         }
         TournamentSettings CreateDummySettings()
@@ -427,7 +436,7 @@ namespace OsuTourneyRefHelper
         {
             try
             {
-                currentPool = poolManager.pools.Find(x => x.Stage == stageToSwitchTo);
+                currentPool = poolManager.pools_old.Find(x => x.Stage == stageToSwitchTo);
                 commManager.CurrentPool = currentPool;
                 ShowTabPages(false);
                 ShowTabPages(true);
@@ -441,9 +450,9 @@ namespace OsuTourneyRefHelper
         }
         public void SwitchToStage(int stageToSwitchTo)
         {
-            if (poolManager.pools.Count > stageToSwitchTo)
+            if (poolManager.pools_old.Count > stageToSwitchTo)
             {
-                currentPool = poolManager.pools[stageToSwitchTo];
+                currentPool = poolManager.pools_old[stageToSwitchTo];
                 commManager.CurrentPool = currentPool;
                 ShowTabPages(false);
                 ShowTabPages(true);
@@ -510,7 +519,7 @@ namespace OsuTourneyRefHelper
             }
         }
 
-        void AddButtonsToTab(FlowLayoutPanel panel, List<Beatmap> pool, bool modButton = false)
+        void AddButtonsToTab(FlowLayoutPanel panel, List<Beatmap_OLD> pool, bool modButton = false)
         {
             if (modButton)
             {
@@ -651,7 +660,7 @@ namespace OsuTourneyRefHelper
         private async void MapSelectButton_Click(object sender, EventArgs e)
         {
             Button objectClicked = (Button)sender;
-            Beatmap selectedBeatmap = currentPool.GetBeatmap(objectClicked.Name.Split('-')[0]);
+            Beatmap_OLD selectedBeatmap = currentPool.GetBeatmap(objectClicked.Name.Split('-')[0]);
             if (previousMod != "")
             {
                 if (previousMod != selectedBeatmap.ToMod())
@@ -803,6 +812,21 @@ namespace OsuTourneyRefHelper
             Console.WriteLine("Closed the thing");
 
             Initialize();
+        }
+        private void OpenPoolEditor_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(SettingsManager.ApiKey))
+            {
+                PoolEditorForm editorForm = new PoolEditorForm();
+                Console.WriteLine("Opening premium editor como no");
+                editorForm.SetPool(poolManager);
+                editorForm.ShowDialog();
+
+            }
+            else
+            {
+
+            }
         }
         #endregion
 

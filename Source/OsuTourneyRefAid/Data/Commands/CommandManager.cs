@@ -12,7 +12,7 @@ namespace OsuTourneyRefHelper.Data.Commands
     {
         List<Command> commandList = new List<Command>();
         Random rand = new Random();
-        public MapPool CurrentPool;
+        public MapPool_OLD CurrentPool;
 
         public CommandManager()
         {
