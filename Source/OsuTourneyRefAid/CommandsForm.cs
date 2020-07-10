@@ -104,6 +104,11 @@ namespace OsuTourneyRefHelper
                 poolStripButt.BackColor = Color.LightGreen;
                 updatePoolToolStripMenuItem.BackColor = Color.LightGreen;
             }
+            else
+            {
+                poolStripButt.BackColor = SystemColors.Control;
+                updatePoolToolStripMenuItem.BackColor = SystemColors.Control;
+            }
         }
         public void Reset()
         {
@@ -205,9 +210,9 @@ namespace OsuTourneyRefHelper
                 {
                     poolManager.version = "0.0.0";
                 }
-                if (poolManager.pools_old.Count == 0)
+                if (poolManager.pools.Count == 0)
                 {
-                    poolManager.pools_old.Add(new MapPool_OLD
+                    poolManager.pools.Add(new MapPool_OLD
                     {
                         Stage = "Crea tu pool pls",
                         nmPool = new List<Beatmap_OLD>(),
@@ -398,7 +403,7 @@ namespace OsuTourneyRefHelper
         {
             poolManager = new MapPoolManager();
             poolManager.version = "1.0.0.0";
-            poolManager.pools_old.Add(new MapPool_OLD
+            poolManager.pools.Add(new MapPool_OLD
             {
                 Stage = "Qualifiers",
                 nmPool = new List<Beatmap_OLD>() { new Beatmap_OLD(1, "wea", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 0, 1), new Beatmap_OLD(2, "aew", "El artista", "noew", "aaaaaa la weaa", 30f, 2.44f, 0, 2) },
@@ -406,7 +411,7 @@ namespace OsuTourneyRefHelper
                 hrPool = new List<Beatmap_OLD>() { new Beatmap_OLD(4, "weaHR", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 2, 1) },
                 dtPool = new List<Beatmap_OLD>() { new Beatmap_OLD(5, "weaDT", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 3, 1) },
             });
-            poolManager.pools_old.Add(new MapPool_OLD
+            poolManager.pools.Add(new MapPool_OLD
             {
                 Stage = "Groups",
                 nmPool = new List<Beatmap_OLD>() { new Beatmap_OLD(1, "wea", "El artista", "weon", "la wea loca", 123.33f, 5.21f, 0, 1), new Beatmap_OLD(2, "aew", "El artista", "noew", "aaaaaa la weaa", 30f, 2.44f, 0, 2) },
@@ -436,7 +441,7 @@ namespace OsuTourneyRefHelper
         {
             try
             {
-                currentPool = poolManager.pools_old.Find(x => x.Stage == stageToSwitchTo);
+                currentPool = poolManager.pools.Find(x => x.Stage == stageToSwitchTo);
                 commManager.CurrentPool = currentPool;
                 ShowTabPages(false);
                 ShowTabPages(true);
@@ -450,9 +455,9 @@ namespace OsuTourneyRefHelper
         }
         public void SwitchToStage(int stageToSwitchTo)
         {
-            if (poolManager.pools_old.Count > stageToSwitchTo)
+            if (poolManager.pools.Count > stageToSwitchTo)
             {
-                currentPool = poolManager.pools_old[stageToSwitchTo];
+                currentPool = poolManager.pools[stageToSwitchTo];
                 commManager.CurrentPool = currentPool;
                 ShowTabPages(false);
                 ShowTabPages(true);
