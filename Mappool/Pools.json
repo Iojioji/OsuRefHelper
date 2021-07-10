@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "pools": [
     {
       "Stage": "Qualifiers",
@@ -68,6 +68,176 @@
       ],
       "fmPool": [],
       "tbPool": []
+    },
+    {
+      "Stage": "Octavos",
+      "nmPool": [
+        {
+          "MapID": 404824,
+          "Title": "Watercolour (Radio Edito)",
+          "Artist": "Pendulum",
+          "Mapper": "AlexaBM",
+          "DiffName": "Muzukashii",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 3093881,
+          "Title": "Guruguru DJ TURN!! (Game ver.)",
+          "Artist": "Happy Around!",
+          "Mapper": "xtrem3x",
+          "DiffName": "Muzukashii",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2186075,
+          "Title": "Leviathan",
+          "Artist": "ziki_7",
+          "Mapper": "yassu-",
+          "DiffName": "Muzukashii",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 2009319,
+          "Title": "LOVE THIS MOMENT",
+          "Artist": "q/stol",
+          "Mapper": "tasuke912",
+          "DiffName": "_yu68's Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        }
+        
+      ],
+      "hdPool": [
+        {
+          "MapID": 3093885,
+          "Title": "Skip! (TV Size)",
+          "Artist": "nomico",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2263550,
+          "Title": "Mangetsu no Tikurin(MRM REMIX)",
+          "Artist": "Morimori Atsushi",
+          "Mapper": "Ozu",
+          "DiffName": "Muzukashii",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 3093883,
+          "Title": "Marciano",
+          "Artist": "Molotov",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1851360,
+          "Title": "Snake Eyes (feat. CoMa)",
+          "Artist": "Feint",
+          "Mapper": "Zedther",
+          "DiffName": "Muzukashii",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 1739221,
+          "Title": "Xue Mao Jiao",
+          "Artist": "Xiao Pan Pan && Xiao Feng Feng",
+          "Mapper": "[Zeth]",
+          "DiffName": "Muzukashii",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1785614,
+          "Title": "Hujan",
+          "Artist": "Utopia",
+          "Mapper": "Surono",
+          "DiffName": "Muzukashii",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 2549059,
+          "Title": "HER",
+          "Artist": "Block B",
+          "Mapper": "Arach",
+          "DiffName": "Muzukashii",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1755535,
+          "Title": "Xperanza",
+          "Artist": "aran",
+          "Mapper": "Ulqi",
+          "DiffName": "Muzukashii",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 3092138,
+          "Title": "No Pantalones",
+          "Artist": "Gunther",
+          "Mapper": "xtrem3x",
+          "DiffName": "OniOni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 3
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 3084301,
+          "Title": "Hajimari Road",
+          "Artist": "Mucho Texto lol",
+          "Mapper": "xtrem3x",
+          "DiffName": "Muzukashii",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
     }
   ],
   "stages": []
