@@ -1,5 +1,5 @@
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "pools": [
     {
       "Stage": "Qualifiers",
@@ -232,6 +232,176 @@
           "Artist": "Mucho Texto lol",
           "Mapper": "xtrem3x",
           "DiffName": "Muzukashii",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Cuartos",
+      "nmPool": [
+        {
+          "MapID": 1954878,
+          "Title": "EON BREAK",
+          "Artist": "Virtual Self",
+          "Mapper": "-Kazu-",
+          "DiffName": "Nwolf's Muzukashii",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 3104792,
+          "Title": "Quen Pon-Ponk",
+          "Artist": "Molotov",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2550446,
+          "Title": "Alt Futur",
+          "Artist": "Silentroom",
+          "Mapper": "eiri-",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 2877465,
+          "Title": "Oomiwa Shinwaden",
+          "Artist": "Tai no Kobone",
+          "Mapper": "CallMeLyra",
+          "DiffName": "Inner Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        }
+        
+      ],
+      "hdPool": [
+        {
+          "MapID": 378247,
+          "Title": "Koigokoro",
+          "Artist": "Primastella",
+          "Mapper": "Narwhal Prime",
+          "DiffName": "Oni",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 720319,
+          "Title": "Dark Flight Dreamer",
+          "Artist": "ALiCE'S EMOTiON",
+          "Mapper": "Celsius6",
+          "DiffName": "Cel's Taiko Muzu",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 2547609,
+          "Title": "NULCTRL",
+          "Artist": "Silentroom",
+          "Mapper": "Vulkin",
+          "DiffName": "Oni",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1476504,
+          "Title": "Oshama Scramble",
+          "Artist": "t+pazolite",
+          "Mapper": "Stingy",
+          "DiffName": "Ayyri's Muzukashii",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 122903,
+          "Title": "Sakura Sakura (Instrumental)",
+          "Artist": "Rin'",
+          "Mapper": "[pboxer3]",
+          "DiffName": "Muzukashii",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1725443,
+          "Title": "Colors Power ni Omakasero!",
+          "Artist": "Color Slash",
+          "Mapper": "HEKUSODASU",
+          "DiffName": "EM's Muzukashii",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 339132,
+          "Title": "Quo Vadis",
+          "Artist": "M2U",
+          "Mapper": "TKSalt",
+          "DiffName": "Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2331799,
+          "Title": "Hey",
+          "Artist": "Thaehan",
+          "Mapper": "DarkVortex",
+          "DiffName": "Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2455573,
+          "Title": "Yan Guang Cai Hong Xiao Bai Ma",
+          "Artist": "Wowkie Zhang",
+          "Mapper": "vrnl",
+          "DiffName": "The Cutest!",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 3
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 2336850,
+          "Title": "Glasya-Labolas",
+          "Artist": "Camellia vs. PHQUASE",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
           "BPM": 110,
           "Stars": 4.11,
           "Mod": 5,
