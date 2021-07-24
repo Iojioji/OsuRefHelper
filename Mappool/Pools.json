@@ -1,5 +1,5 @@
 {
-  "version": "2.0.2",
+  "version": "2.0.3",
   "pools": [
     {
       "Stage": "Qualifiers",
@@ -401,6 +401,186 @@
           "Title": "Glasya-Labolas",
           "Artist": "Camellia vs. PHQUASE",
           "Mapper": "xtrem3x",
+          "DiffName": "Oni",
+          "BPM": 110,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Semis",
+      "nmPool": [
+        {
+          "MapID": 3080567,
+          "Title": "Solar Blade",
+          "Artist": "Iglooghost",
+          "Mapper": "D3kuu",
+          "DiffName": "Oni",
+          "BPM": 222,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2454075,
+          "Title": "Slan Leat",
+          "Artist": "Rohi",
+          "Mapper": "eiri_",
+          "DiffName": "Trynna's Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 1977731,
+          "Title": "3piece -Jazz Party!",
+          "Artist": "Mihile",
+          "Mapper": "Nifty",
+          "DiffName": "Combo",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 2045087,
+          "Title": "Pictured as Perfect",
+          "Artist": "Frums",
+          "Mapper": "_yu68",
+          "DiffName": "Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        },
+        {
+          "MapID": 2063920,
+          "Title": "Kill The Beat",
+          "Artist": "lapix",
+          "Mapper": "HiroK",
+          "DiffName": "Inner Oni",
+          "BPM": 220,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 5
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 2058314,
+          "Title": "Gold Dust",
+          "Artist": "DJ Fresh",
+          "Mapper": "Nwolf",
+          "DiffName": "Pheon's Oni",
+          "BPM": 185,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2687832,
+          "Title": "Mecha Mecha Mecha",
+          "Artist": "tepasolite y camellia con la nanahira",
+          "Mapper": "-Aku",
+          "DiffName": "Expert",
+          "BPM": 190,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 151075,
+          "Title": "Ultimate Truth",
+          "Artist": "Gojou Kai",
+          "Mapper": "DaxMasterix",
+          "DiffName": "Wmf's Taiko",
+          "BPM": 110,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2409492,
+          "Title": "SAIKYO STRONGER",
+          "Artist": "REDALiCE vs USAO",
+          "Mapper": "MMzz",
+          "DiffName": "Chromoxx' Muzukashii",
+          "BPM": 170,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 1607054,
+          "Title": "Ooedo Ranvu",
+          "Artist": "Reol,nrqse",
+          "Mapper": "zhu",
+          "DiffName": "Ayyri's Oni",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1362732,
+          "Title": "Time Traveler",
+          "Artist": "KNOWER",
+          "Mapper": "Nifty",
+          "DiffName": "Muzukashii",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 1745534,
+          "Title": "Trahison",
+          "Artist": "be5moti",
+          "Mapper": "houraizin",
+          "DiffName": "Muzukashii",
+          "BPM": 258,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1205385,
+          "Title": "On the FM",
+          "Artist": "C-Show",
+          "Mapper": "Nofool",
+          "DiffName": "Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 1501403,
+          "Title": "Mushrooms",
+          "Artist": "Mili",
+          "Mapper": "Bowashe",
+          "DiffName": "Oni",
+          "BPM": 212,
+          "Stars": 3.30,
+          "Mod": 4,
+          "ModIndex": 3
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 2209524,
+          "Title": "BRAND NEW DAY",
+          "Artist": "lapix",
+          "Mapper": "Cychloryn",
           "DiffName": "Oni",
           "BPM": 110,
           "Stars": 4.11,
