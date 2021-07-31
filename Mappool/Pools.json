@@ -1,5 +1,5 @@
 {
-  "version": "2.0.3",
+  "version": "2.0.4",
   "pools": [
     {
       "Stage": "Qualifiers",
@@ -10,8 +10,8 @@
           "Artist": "IOSYS",
           "Mapper": "Mao",
           "DiffName": "Dekaane's Oni",
-          "BPM": 0,
-          "Stars": 0,
+          "BPM": 0.0,
+          "Stars": 0.0,
           "Mod": 0,
           "ModIndex": 1
         },
@@ -21,8 +21,8 @@
           "Artist": "EBIMAYO",
           "Mapper": "xtrem3x",
           "DiffName": "Muzukashii",
-          "BPM": 0,
-          "Stars": 0,
+          "BPM": 0.0,
+          "Stars": 0.0,
           "Mod": 0,
           "ModIndex": 2
         }
@@ -34,8 +34,8 @@
           "Artist": "Wotamin",
           "Mapper": "Star Stream",
           "DiffName": "Lundle's Muzu",
-          "BPM": 0,
-          "Stars": 0,
+          "BPM": 0.0,
+          "Stars": 0.0,
           "Mod": 1,
           "ModIndex": 1
         }
@@ -47,8 +47,8 @@
           "Artist": "Ca,e;;oa ft. Nanahira",
           "Mapper": "Konpaku Sariel",
           "DiffName": "Oni",
-          "BPM": 0,
-          "Stars": 0,
+          "BPM": 0.0,
+          "Stars": 0.0,
           "Mod": 2,
           "ModIndex": 1
         }
@@ -60,7 +60,7 @@
           "Artist": "Bajofondo",
           "Mapper": "Midnaait",
           "DiffName": "Muzukashii",
-          "BPM": 170,
+          "BPM": 170.0,
           "Stars": 3.07,
           "Mod": 3,
           "ModIndex": 1
@@ -78,7 +78,7 @@
           "Artist": "Pendulum",
           "Mapper": "AlexaBM",
           "DiffName": "Muzukashii",
-          "BPM": 222,
+          "BPM": 222.0,
           "Stars": 3.35,
           "Mod": 0,
           "ModIndex": 1
@@ -89,7 +89,7 @@
           "Artist": "Happy Around!",
           "Mapper": "xtrem3x",
           "DiffName": "Muzukashii",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 2
@@ -100,7 +100,7 @@
           "Artist": "ziki_7",
           "Mapper": "yassu-",
           "DiffName": "Muzukashii",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 3
@@ -111,12 +111,11 @@
           "Artist": "q/stol",
           "Mapper": "tasuke912",
           "DiffName": "_yu68's Oni",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 4
         }
-        
       ],
       "hdPool": [
         {
@@ -125,7 +124,7 @@
           "Artist": "nomico",
           "Mapper": "xtrem3x",
           "DiffName": "Oni",
-          "BPM": 185,
+          "BPM": 185.0,
           "Stars": 3.05,
           "Mod": 1,
           "ModIndex": 1
@@ -136,7 +135,7 @@
           "Artist": "Morimori Atsushi",
           "Mapper": "Ozu",
           "DiffName": "Muzukashii",
-          "BPM": 190,
+          "BPM": 190.0,
           "Stars": 3.22,
           "Mod": 1,
           "ModIndex": 2
@@ -149,7 +148,7 @@
           "Artist": "Molotov",
           "Mapper": "xtrem3x",
           "DiffName": "Oni",
-          "BPM": 110,
+          "BPM": 110.0,
           "Stars": 3.25,
           "Mod": 2,
           "ModIndex": 1
@@ -160,7 +159,7 @@
           "Artist": "Feint",
           "Mapper": "Zedther",
           "DiffName": "Muzukashii",
-          "BPM": 170,
+          "BPM": 170.0,
           "Stars": 3.15,
           "Mod": 2,
           "ModIndex": 2
@@ -173,7 +172,7 @@
           "Artist": "Xiao Pan Pan && Xiao Feng Feng",
           "Mapper": "[Zeth]",
           "DiffName": "Muzukashii",
-          "BPM": 258,
+          "BPM": 258.0,
           "Stars": 3.48,
           "Mod": 3,
           "ModIndex": 1
@@ -184,8 +183,8 @@
           "Artist": "Utopia",
           "Mapper": "Surono",
           "DiffName": "Muzukashii",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 3,
           "ModIndex": 2
         }
@@ -197,7 +196,7 @@
           "Artist": "Block B",
           "Mapper": "Arach",
           "DiffName": "Muzukashii",
-          "BPM": 258,
+          "BPM": 258.0,
           "Stars": 3.48,
           "Mod": 4,
           "ModIndex": 1
@@ -208,8 +207,8 @@
           "Artist": "aran",
           "Mapper": "Ulqi",
           "DiffName": "Muzukashii",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 4,
           "ModIndex": 2
         },
@@ -219,8 +218,8 @@
           "Artist": "Gunther",
           "Mapper": "xtrem3x",
           "DiffName": "OniOni",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 4,
           "ModIndex": 3
         }
@@ -232,7 +231,7 @@
           "Artist": "Mucho Texto lol",
           "Mapper": "xtrem3x",
           "DiffName": "Muzukashii",
-          "BPM": 110,
+          "BPM": 110.0,
           "Stars": 4.11,
           "Mod": 5,
           "ModIndex": 1
@@ -248,7 +247,7 @@
           "Artist": "Virtual Self",
           "Mapper": "-Kazu-",
           "DiffName": "Nwolf's Muzukashii",
-          "BPM": 222,
+          "BPM": 222.0,
           "Stars": 3.35,
           "Mod": 0,
           "ModIndex": 1
@@ -259,7 +258,7 @@
           "Artist": "Molotov",
           "Mapper": "xtrem3x",
           "DiffName": "Oni",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 2
@@ -270,7 +269,7 @@
           "Artist": "Silentroom",
           "Mapper": "eiri-",
           "DiffName": "Oni",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 3
@@ -281,12 +280,11 @@
           "Artist": "Tai no Kobone",
           "Mapper": "CallMeLyra",
           "DiffName": "Inner Oni",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 4
         }
-        
       ],
       "hdPool": [
         {
@@ -295,7 +293,7 @@
           "Artist": "Primastella",
           "Mapper": "Narwhal Prime",
           "DiffName": "Oni",
-          "BPM": 185,
+          "BPM": 185.0,
           "Stars": 3.05,
           "Mod": 1,
           "ModIndex": 1
@@ -306,7 +304,7 @@
           "Artist": "ALiCE'S EMOTiON",
           "Mapper": "Celsius6",
           "DiffName": "Cel's Taiko Muzu",
-          "BPM": 190,
+          "BPM": 190.0,
           "Stars": 3.22,
           "Mod": 1,
           "ModIndex": 2
@@ -319,7 +317,7 @@
           "Artist": "Silentroom",
           "Mapper": "Vulkin",
           "DiffName": "Oni",
-          "BPM": 110,
+          "BPM": 110.0,
           "Stars": 3.25,
           "Mod": 2,
           "ModIndex": 1
@@ -330,7 +328,7 @@
           "Artist": "t+pazolite",
           "Mapper": "Stingy",
           "DiffName": "Ayyri's Muzukashii",
-          "BPM": 170,
+          "BPM": 170.0,
           "Stars": 3.15,
           "Mod": 2,
           "ModIndex": 2
@@ -343,7 +341,7 @@
           "Artist": "Rin'",
           "Mapper": "[pboxer3]",
           "DiffName": "Muzukashii",
-          "BPM": 258,
+          "BPM": 258.0,
           "Stars": 3.48,
           "Mod": 3,
           "ModIndex": 1
@@ -354,8 +352,8 @@
           "Artist": "Color Slash",
           "Mapper": "HEKUSODASU",
           "DiffName": "EM's Muzukashii",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 3,
           "ModIndex": 2
         }
@@ -367,7 +365,7 @@
           "Artist": "M2U",
           "Mapper": "TKSalt",
           "DiffName": "Oni",
-          "BPM": 258,
+          "BPM": 258.0,
           "Stars": 3.48,
           "Mod": 4,
           "ModIndex": 1
@@ -378,8 +376,8 @@
           "Artist": "Thaehan",
           "Mapper": "DarkVortex",
           "DiffName": "Oni",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 4,
           "ModIndex": 2
         },
@@ -389,8 +387,8 @@
           "Artist": "Wowkie Zhang",
           "Mapper": "vrnl",
           "DiffName": "The Cutest!",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 4,
           "ModIndex": 3
         }
@@ -402,7 +400,7 @@
           "Artist": "Camellia vs. PHQUASE",
           "Mapper": "xtrem3x",
           "DiffName": "Oni",
-          "BPM": 110,
+          "BPM": 110.0,
           "Stars": 4.11,
           "Mod": 5,
           "ModIndex": 1
@@ -418,7 +416,7 @@
           "Artist": "Iglooghost",
           "Mapper": "D3kuu",
           "DiffName": "Oni",
-          "BPM": 222,
+          "BPM": 222.0,
           "Stars": 3.35,
           "Mod": 0,
           "ModIndex": 1
@@ -429,7 +427,7 @@
           "Artist": "Rohi",
           "Mapper": "eiri_",
           "DiffName": "Trynna's Oni",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 2
@@ -440,7 +438,7 @@
           "Artist": "Mihile",
           "Mapper": "Nifty",
           "DiffName": "Combo",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 3
@@ -451,7 +449,7 @@
           "Artist": "Frums",
           "Mapper": "_yu68",
           "DiffName": "Oni",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 4
@@ -462,7 +460,7 @@
           "Artist": "lapix",
           "Mapper": "HiroK",
           "DiffName": "Inner Oni",
-          "BPM": 220,
+          "BPM": 220.0,
           "Stars": 3.82,
           "Mod": 0,
           "ModIndex": 5
@@ -475,7 +473,7 @@
           "Artist": "DJ Fresh",
           "Mapper": "Nwolf",
           "DiffName": "Pheon's Oni",
-          "BPM": 185,
+          "BPM": 185.0,
           "Stars": 3.05,
           "Mod": 1,
           "ModIndex": 1
@@ -486,7 +484,7 @@
           "Artist": "tepasolite y camellia con la nanahira",
           "Mapper": "-Aku",
           "DiffName": "Expert",
-          "BPM": 190,
+          "BPM": 190.0,
           "Stars": 3.22,
           "Mod": 1,
           "ModIndex": 2
@@ -499,7 +497,7 @@
           "Artist": "Gojou Kai",
           "Mapper": "DaxMasterix",
           "DiffName": "Wmf's Taiko",
-          "BPM": 110,
+          "BPM": 110.0,
           "Stars": 3.25,
           "Mod": 2,
           "ModIndex": 1
@@ -510,7 +508,7 @@
           "Artist": "REDALiCE vs USAO",
           "Mapper": "MMzz",
           "DiffName": "Chromoxx' Muzukashii",
-          "BPM": 170,
+          "BPM": 170.0,
           "Stars": 3.15,
           "Mod": 2,
           "ModIndex": 2
@@ -523,7 +521,7 @@
           "Artist": "Reol,nrqse",
           "Mapper": "zhu",
           "DiffName": "Ayyri's Oni",
-          "BPM": 258,
+          "BPM": 258.0,
           "Stars": 3.48,
           "Mod": 3,
           "ModIndex": 1
@@ -534,8 +532,8 @@
           "Artist": "KNOWER",
           "Mapper": "Nifty",
           "DiffName": "Muzukashii",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 3,
           "ModIndex": 2
         }
@@ -547,7 +545,7 @@
           "Artist": "be5moti",
           "Mapper": "houraizin",
           "DiffName": "Muzukashii",
-          "BPM": 258,
+          "BPM": 258.0,
           "Stars": 3.48,
           "Mod": 4,
           "ModIndex": 1
@@ -558,8 +556,8 @@
           "Artist": "C-Show",
           "Mapper": "Nofool",
           "DiffName": "Oni",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 4,
           "ModIndex": 2
         },
@@ -569,8 +567,8 @@
           "Artist": "Mili",
           "Mapper": "Bowashe",
           "DiffName": "Oni",
-          "BPM": 212,
-          "Stars": 3.30,
+          "BPM": 212.0,
+          "Stars": 3.3,
           "Mod": 4,
           "ModIndex": 3
         }
@@ -582,13 +580,192 @@
           "Artist": "lapix",
           "Mapper": "Cychloryn",
           "DiffName": "Oni",
-          "BPM": 110,
+          "BPM": 110.0,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Finales",
+      "nmPool": [
+        {
+          "MapID": 2760215,
+          "Title": "Itte",
+          "Artist": "Yorushika",
+          "Mapper": "gaston_2199",
+          "DiffName": "Oni",
+          "BPM": 222.0,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 3130267,
+          "Title": "Such Great Height",
+          "Artist": "Streetlight Manifesto",
+          "Mapper": "Sladak",
+          "DiffName": "Trynna's Oni",
+          "BPM": 220.0,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2432558,
+          "Title": "Brecorr in Macedonia",
+          "Artist": "Rahatt",
+          "Mapper": "Genjuro",
+          "DiffName": "Combo",
+          "BPM": 220.0,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 2498079,
+          "Title": "How to make Slime",
+          "Artist": "O2i3",
+          "Mapper": "eiri-",
+          "DiffName": "Oni",
+          "BPM": 220.0,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        },
+        {
+          "MapID": 914272,
+          "Title": "The dive in cucumber bar",
+          "Artist": "IOSYS",
+          "Mapper": "katacheh",
+          "DiffName": "Inner Oni",
+          "BPM": 220.0,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 5
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 1601344,
+          "Title": "The Commanders",
+          "Artist": "USAO",
+          "Mapper": "Yales",
+          "DiffName": "Pheon's Oni",
+          "BPM": 185.0,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1749298,
+          "Title": "Perfect Neglect",
+          "Artist": "Kobaryo",
+          "Mapper": "duski",
+          "DiffName": "Expert",
+          "BPM": 190.0,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 2546082,
+          "Title": "Mare Maris",
+          "Artist": "M2U",
+          "Mapper": "Quorum",
+          "DiffName": "Wmf's Taiko",
+          "BPM": 110.0,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 904516,
+          "Title": "Streaming Heart",
+          "Artist": "Reol",
+          "Mapper": "Chromoxx",
+          "DiffName": "Chromoxx' Muzukashii",
+          "BPM": 170.0,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 1665836,
+          "Title": "Daby Doll",
+          "Artist": "Utopia",
+          "Mapper": "Surono",
+          "DiffName": "Terindah",
+          "BPM": 258.0,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 172993,
+          "Title": "Only time make yout hapiness",
+          "Artist": "Subplaid",
+          "Mapper": "[Luanny PhNyx]",
+          "DiffName": "Muzukashii",
+          "BPM": 212.0,
+          "Stars": 3.3,
+          "Mod": 3,
+          "ModIndex": 2
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 151701,
+          "Title": "KIMONO PRINCESS",
+          "Artist": "jun",
+          "Mapper": "Philippines",
+          "DiffName": "Muzukashii",
+          "BPM": 258.0,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 2297395,
+          "Title": "Dopamine",
+          "Artist": "U1 overground",
+          "Mapper": "Genjuro",
+          "DiffName": "Oni",
+          "BPM": 212.0,
+          "Stars": 3.3,
+          "Mod": 4,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 717340,
+          "Title": "Riot of Color",
+          "Artist": "TAG",
+          "Mapper": "OzzyOzrock",
+          "DiffName": "Oni",
+          "BPM": 212.0,
+          "Stars": 3.3,
+          "Mod": 4,
+          "ModIndex": 3
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 2891181,
+          "Title": "In Your Face",
+          "Artist": "Kobaryo",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
+          "BPM": 110.0,
           "Stars": 4.11,
           "Mod": 5,
           "ModIndex": 1
         }
       ]
     }
-  ],
-  "stages": []
+  ]
 }
