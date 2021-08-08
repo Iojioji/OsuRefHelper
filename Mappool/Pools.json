@@ -1,5 +1,5 @@
 {
-  "version": "2.0.4",
+  "version": "2.0.5",
   "pools": [
     {
       "Stage": "Qualifiers",
@@ -758,6 +758,219 @@
           "MapID": 2891181,
           "Title": "In Your Face",
           "Artist": "Kobaryo",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
+          "BPM": 110.0,
+          "Stars": 4.11,
+          "Mod": 5,
+          "ModIndex": 1
+        }
+      ]
+    },
+    {
+      "Stage": "Grand Finals",
+      "nmPool": [
+        {
+          "MapID": 430824,
+          "Title": "Tower of Heaven",
+          "Artist": "Feint",
+          "Mapper": "Kagami Yuki",
+          "DiffName": "Oni",
+          "BPM": 222.0,
+          "Stars": 3.35,
+          "Mod": 0,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 3142635,
+          "Title": "Tempest Zone",
+          "Artist": "Sequencer",
+          "Mapper": "xtrem3x",
+          "DiffName": "Trynna's Oni",
+          "BPM": 220.0,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2736308,
+          "Title": "The 89 momentum",
+          "Artist": "MYUKKE",
+          "Mapper": "HiroK",
+          "DiffName": "Combo",
+          "BPM": 220.0,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 3
+        },
+        {
+          "MapID": 1949154,
+          "Title": "Succubi",
+          "Artist": "onumi",
+          "Mapper": "Nifty",
+          "DiffName": "Oni",
+          "BPM": 220.0,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 4
+        },
+        {
+          "MapID": 2169753,
+          "Title": "U got that",
+          "Artist": "camellia",
+          "Mapper": "rubies87",
+          "DiffName": "Inner Oni",
+          "BPM": 220.0,
+          "Stars": 3.82,
+          "Mod": 0,
+          "ModIndex": 5
+        }
+      ],
+      "hdPool": [
+        {
+          "MapID": 1069808,
+          "Title": "Starlight Twilight",
+          "Artist": "Tatsh",
+          "Mapper": "ll-oscar",
+          "DiffName": "Pheon's Oni",
+          "BPM": 185.0,
+          "Stars": 3.05,
+          "Mod": 1,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1598892,
+          "Title": "Bison Charge",
+          "Artist": "Umeboshi",
+          "Mapper": "Midnaait",
+          "DiffName": "Expert",
+          "BPM": 190.0,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 435822,
+          "Title": "Super Nuko World",
+          "Artist": "nya",
+          "Mapper": "AllStar12",
+          "DiffName": "Expert",
+          "BPM": 190.0,
+          "Stars": 3.22,
+          "Mod": 1,
+          "ModIndex": 3
+        }
+      ],
+      "hrPool": [
+        {
+          "MapID": 3140662,
+          "Title": "Liquid Protocol",
+          "Artist": "Srezcat",
+          "Mapper": "xtrem3x",
+          "DiffName": "Wmf's Taiko",
+          "BPM": 110.0,
+          "Stars": 3.25,
+          "Mod": 2,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 1506523,
+          "Title": "ERROR CODE",
+          "Artist": "C-Show",
+          "Mapper": "incandescence",
+          "DiffName": "Chromoxx' Muzukashii",
+          "BPM": 170.0,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 702628,
+          "Title": "EOS",
+          "Artist": "ginkiha",
+          "Mapper": "Chromoxx",
+          "DiffName": "Chromoxx' Muzukashii",
+          "BPM": 170.0,
+          "Stars": 3.15,
+          "Mod": 2,
+          "ModIndex": 3
+        }
+      ],
+      "dtPool": [
+        {
+          "MapID": 158851,
+          "Title": "lonely dreaming girl",
+          "Artist": "Tama",
+          "Mapper": "Snowy Dream",
+          "DiffName": "Terindah",
+          "BPM": 258.0,
+          "Stars": 3.48,
+          "Mod": 3,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 308979,
+          "Title": "Netoge Haijin Sprechchor",
+          "Artist": "Satsuki",
+          "Mapper": "aabc271",
+          "DiffName": "Muzukashii",
+          "BPM": 212.0,
+          "Stars": 3.3,
+          "Mod": 3,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 2234250,
+          "Title": "Fruits",
+          "Artist": "Panda Eyes",
+          "Mapper": "Cychloryn",
+          "DiffName": "Muzukashii",
+          "BPM": 212.0,
+          "Stars": 3.3,
+          "Mod": 3,
+          "ModIndex": 3
+        }
+      ],
+      "fmPool": [
+        {
+          "MapID": 314179,
+          "Title": "We're so happy",
+          "Artist": "Ryu*",
+          "Mapper": "Spy",
+          "DiffName": "Muzukashii",
+          "BPM": 258.0,
+          "Stars": 3.48,
+          "Mod": 4,
+          "ModIndex": 1
+        },
+        {
+          "MapID": 3142642,
+          "Title": "777",
+          "Artist": "Roughsketch",
+          "Mapper": "xtrem3x",
+          "DiffName": "Oni",
+          "BPM": 212.0,
+          "Stars": 3.3,
+          "Mod": 4,
+          "ModIndex": 2
+        },
+        {
+          "MapID": 3142634,
+          "Title": "Boku mo Kasaganai",
+          "Artist": "Korone Pochi",
+          "Mapper": "Iojioji",
+          "DiffName": "Oni",
+          "BPM": 212.0,
+          "Stars": 3.3,
+          "Mod": 4,
+          "ModIndex": 3
+        }
+      ],
+      "tbPool": [
+        {
+          "MapID": 3142649,
+          "Title": "GENOCIDER",
+          "Artist": "DJ Myosuke",
           "Mapper": "xtrem3x",
           "DiffName": "Oni",
           "BPM": 110.0,
