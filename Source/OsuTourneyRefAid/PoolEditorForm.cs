@@ -22,6 +22,8 @@ namespace OsuTourneyRefHelper.Data
         bool isPremium;
         MapPoolManager poolManager = new MapPoolManager();
         List<PoolSectionControls> currentSections = new List<PoolSectionControls>();
+
+        int currentlySelectedStage = -1;
         public PoolEditorForm()
         {
             InitializeComponent();
@@ -63,6 +65,16 @@ namespace OsuTourneyRefHelper.Data
         {
             PoolStage auxStage = poolManager.stages[poolStageSelection.SelectedIndex];
             stageNameTexBox.Text = auxStage.Name;
+            //Fill sections
+            LoadSections();
+        }
+        void LoadSections()
+        {
+            for (int i = 0; i < poolManager.stages[poolStageSelection.SelectedIndex].Sections.Count; i++)
+            {
+                CreateSection(sectionGeneralPanel, poolManager.stages[poolStageSelection.SelectedIndex].Sections[i]);
+                //sectionGeneralPanel.Controls.Add(poolManager.stages[poolStageSelection.SelectedIndex].Sections[i]);
+            }
         }
         void AddStage()
         {
@@ -173,12 +185,29 @@ namespace OsuTourneyRefHelper.Data
             setModCheckBox(htModCheBox, false);
             setModCheckBox(flModCheBox, false);
         }
+        void CreateSection(FlowLayoutPanel toAddTo, PoolSection toCreate)
+        {
+            PoolSectionControls auxPSC = new PoolSectionControls(toAddTo, toCreate, this);
+        }
         void CreateSection()
         {
-            PoolSectionControls auxPSC = new PoolSectionControls(sectionGeneralPanel, new PoolSection() { Name = $"Section{currentSections.Count + 1}" });
+            PoolSectionControls auxPSC = new PoolSectionControls(sectionGeneralPanel, new PoolSection() { Name = $"Section{currentSections.Count + 1}" }, this);
             currentSections.Add(auxPSC);
-
+            poolManager.stages[poolStageSelection.SelectedIndex].Sections.Add(auxPSC.assignedSection);
             Console.WriteLine($"Controls in panel: {sectionGeneralPanel.Controls.Count}");
+        }
+        public void RemoveSection(PoolSectionControls controls)
+        {
+            //if (sectionGeneralPanel.Controls.Contains())
+        }
+        void ClearSections()
+        {
+            int objectsToRemove = sectionGeneralPanel.Controls.Count;
+            for (int i = 0; i < objectsToRemove; i++)
+            {
+                sectionGeneralPanel.Controls.RemoveAt(0);
+                Console.WriteLine($"Controls in panel: {sectionGeneralPanel.Controls.Count}");
+            }
         }
 
         #region events
@@ -193,7 +222,15 @@ namespace OsuTourneyRefHelper.Data
 
         private void SwitchStage_Changed(object sender, EventArgs e)
         {
-            FillInfoData();
+            ListBox newStage = sender as ListBox;
+            addSectionButt.Enabled = newStage.SelectedIndex != -1;
+            if (newStage.SelectedIndex != currentlySelectedStage)
+            {
+                currentlySelectedStage = newStage.SelectedIndex;
+                ClearSections();
+                FillInfoData();
+                Console.WriteLine(poolManager.ToString());
+            }
         }
 
         //God, forgive me for what I'm about to do

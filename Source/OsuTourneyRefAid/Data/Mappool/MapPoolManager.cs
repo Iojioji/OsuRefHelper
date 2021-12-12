@@ -33,6 +33,14 @@ namespace OsuTourneyRefHelper.Data.Mappool
             {
                 aux += pools[i].ToString() + "\r\n";
             }
+            if (stages.Count > 0)
+            {
+                aux += "\r\n\r\nNew Pool Stages:\r\n";
+                foreach (PoolStage stage in stages)
+                {
+                    aux += $"{stage}\r\n";
+                }
+            }
             return aux;
         }
     }

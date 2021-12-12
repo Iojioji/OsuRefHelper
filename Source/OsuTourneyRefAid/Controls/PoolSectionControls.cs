@@ -22,11 +22,14 @@ namespace OsuTourneyRefHelper.Controls
         public TextBox sectionName;
         public GroupBox stageModsGroBox;
         public Label sectionNameLbl;
+        public Button removeSectionButt;
+        PoolEditorForm poolEditorForm;
 
-        public PoolSectionControls(Panel parent, PoolSection section)
+        public PoolSectionControls(Panel parent, PoolSection section, PoolEditorForm form)
         {
             parentPanel = parent;
             assignedSection = section;
+            poolEditorForm = form;
             Initialize();
         }
         void Initialize()
@@ -47,6 +50,7 @@ namespace OsuTourneyRefHelper.Controls
             sectionName.Name = $"sectionNameTexBox-{assignedSection.Name}";
             sectionName.Text = assignedSection.Name;
             sectionName.Size = new Size(120, 20);
+            sectionName.KeyUp += StageName_Enter;
             backgroundPanel.Controls.Add(sectionName);
 
             sectionNameLbl = new Label();
@@ -71,9 +75,58 @@ namespace OsuTourneyRefHelper.Controls
             stageModsGroBox.Text = $"Mods del Stage '{assignedSection.Name}'";
             backgroundPanel.Controls.Add(stageModsGroBox);
 
+            removeSectionButt = new Button();
+            removeSectionButt.Location = new Point(500, 60);
+            removeSectionButt.Size = new Size(60, 23);
+            removeSectionButt.Name = $"removeSectionButt-{assignedSection.Name}";
+            removeSectionButt.Text = "Remover Seccion";
+            removeSectionButt.UseVisualStyleBackColor = true;
+            backgroundPanel.Controls.Add(removeSectionButt);
+
             CreateCheckBoxes();
+            SetupEvents();
         }
-        
+
+        void SetupEvents()
+        {
+            removeSectionButt.Click += RemoveSection_Click;
+        }
+        void RemoveEvents()
+        {
+            removeSectionButt.Click -= RemoveSection_Click;
+
+
+
+            nmMod.CheckedChanged -= ModCheck_Changed;
+
+            hdMod.CheckedChanged -= ModCheck_Changed;
+
+            hrMod.CheckedChanged -= ModCheck_Changed;
+
+            ezMod.CheckedChanged -= ModCheck_Changed;
+
+            dtMod.CheckedChanged -= ModCheck_Changed;
+
+            ncMod.CheckedChanged -= ModCheck_Changed;
+
+            htMod.CheckedChanged -= ModCheck_Changed;
+
+            flMod.CheckedChanged -= ModCheck_Changed;
+
+            fmMod.CheckedChanged -= ModCheck_Changed;
+        }
+
+        public void RemoveSection()
+        {
+            RemoveEvents();
+            poolEditorForm.RemoveSection(this);
+        }
+
+        //private void RemoveSection_Click(object sender, EventArgs e)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
         //Forgive me lord for I have sinned
         void CreateCheckBoxes()
         {
@@ -126,12 +179,12 @@ namespace OsuTourneyRefHelper.Controls
 
             modList = new List<CheckBox>() { nmMod, hdMod, hrMod, ezMod, dtMod, ncMod, htMod, flMod, fmMod };
 
-            for (int  i = 0; i < modList.Count; i++)
+            for (int i = 0; i < modList.Count; i++)
             {
                 modList[i].AutoSize = true;
                 modList[i].Size = new Size(73, 17);
                 modList[i].UseVisualStyleBackColor = true;
-                modList[i].CheckedChanged += new EventHandler(ModCheck_Changed);
+                modList[i].CheckedChanged += ModCheck_Changed;
                 stageModsGroBox.Controls.Add(modList[i]);
             }
         }
@@ -164,6 +217,30 @@ namespace OsuTourneyRefHelper.Controls
             SetModCheckBox(ncMod, false);
             SetModCheckBox(htMod, false);
             SetModCheckBox(flMod, false);
+        }
+
+        //Lmao forgive lord once again
+        void AssignSelectedMods()
+        {
+            assignedSection.Mods.Clear();
+            if (nmMod.Checked)
+                assignedSection.Mods.Add(MapMod.NM);
+            if (hdMod.Checked)
+                assignedSection.Mods.Add(MapMod.HD);
+            if (hrMod.Checked)
+                assignedSection.Mods.Add(MapMod.HR);
+            if (ezMod.Checked)
+                assignedSection.Mods.Add(MapMod.EZ);
+            if (dtMod.Checked)
+                assignedSection.Mods.Add(MapMod.DT);
+            if (ncMod.Checked)
+                assignedSection.Mods.Add(MapMod.NC);
+            if (htMod.Checked)
+                assignedSection.Mods.Add(MapMod.HT);
+            if (flMod.Checked)
+                assignedSection.Mods.Add(MapMod.FL);
+            if (fmMod.Checked)
+                assignedSection.Mods.Add(MapMod.FM);
         }
 
         #region controlEvents
@@ -213,6 +290,22 @@ namespace OsuTourneyRefHelper.Controls
                         break;
                 }
             }
+            Console.WriteLine($"Before assigning: {assignedSection}");
+            AssignSelectedMods();
+            Console.WriteLine($"After assigning: {assignedSection}");
+        }
+        private void StageName_Enter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                assignedSection.Name = sectionName.Text;
+                e.Handled = true;
+            }
+        }
+
+        private void RemoveSection_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine($"Ayy me van a quitar unu");
         }
         #endregion
     }

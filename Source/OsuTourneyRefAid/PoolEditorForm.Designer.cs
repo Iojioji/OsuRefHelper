@@ -36,6 +36,7 @@
             this.stageInfoPanel = new System.Windows.Forms.Panel();
             this.stageNameTexBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.sectionGeneralPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.sectionInfoPanel = new System.Windows.Forms.Panel();
             this.addMapButt = new System.Windows.Forms.Button();
             this.stageModGroBox = new System.Windows.Forms.GroupBox();
@@ -53,14 +54,13 @@
             this.addSectionPanel = new System.Windows.Forms.Panel();
             this.addSectionButt = new System.Windows.Forms.Button();
             this.savePoolButt = new System.Windows.Forms.Button();
-            this.sectionGeneralPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.poolMainPanel.SuspendLayout();
             this.stageBackPanel.SuspendLayout();
             this.stageInfoPanel.SuspendLayout();
+            this.sectionGeneralPanel.SuspendLayout();
             this.sectionInfoPanel.SuspendLayout();
             this.stageModGroBox.SuspendLayout();
             this.addSectionPanel.SuspendLayout();
-            this.sectionGeneralPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // poolStageSelection
@@ -144,6 +144,18 @@
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del Stage";
+            // 
+            // sectionGeneralPanel
+            // 
+            this.sectionGeneralPanel.AutoSize = true;
+            this.sectionGeneralPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.sectionGeneralPanel.BackColor = System.Drawing.Color.Coral;
+            this.sectionGeneralPanel.Controls.Add(this.sectionInfoPanel);
+            this.sectionGeneralPanel.Location = new System.Drawing.Point(0, 45);
+            this.sectionGeneralPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.sectionGeneralPanel.Name = "sectionGeneralPanel";
+            this.sectionGeneralPanel.Size = new System.Drawing.Size(640, 94);
+            this.sectionGeneralPanel.TabIndex = 5;
             // 
             // sectionInfoPanel
             // 
@@ -317,6 +329,7 @@
             this.addSectionButt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.addSectionButt.Enabled = false;
             this.addSectionButt.Location = new System.Drawing.Point(3, 3);
             this.addSectionButt.Name = "addSectionButt";
             this.addSectionButt.Size = new System.Drawing.Size(634, 36);
@@ -334,18 +347,6 @@
             this.savePoolButt.TabIndex = 0;
             this.savePoolButt.Text = "Guardar Pool";
             this.savePoolButt.UseVisualStyleBackColor = true;
-            // 
-            // sectionGeneralPanel
-            // 
-            this.sectionGeneralPanel.AutoSize = true;
-            this.sectionGeneralPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.sectionGeneralPanel.BackColor = System.Drawing.Color.Coral;
-            this.sectionGeneralPanel.Controls.Add(this.sectionInfoPanel);
-            this.sectionGeneralPanel.Location = new System.Drawing.Point(0, 45);
-            this.sectionGeneralPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.sectionGeneralPanel.Name = "sectionGeneralPanel";
-            this.sectionGeneralPanel.Size = new System.Drawing.Size(640, 94);
-            this.sectionGeneralPanel.TabIndex = 5;
             // 
             // PoolEditorForm
             // 
@@ -368,12 +369,12 @@
             this.stageBackPanel.PerformLayout();
             this.stageInfoPanel.ResumeLayout(false);
             this.stageInfoPanel.PerformLayout();
+            this.sectionGeneralPanel.ResumeLayout(false);
             this.sectionInfoPanel.ResumeLayout(false);
             this.sectionInfoPanel.PerformLayout();
             this.stageModGroBox.ResumeLayout(false);
             this.stageModGroBox.PerformLayout();
             this.addSectionPanel.ResumeLayout(false);
-            this.sectionGeneralPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

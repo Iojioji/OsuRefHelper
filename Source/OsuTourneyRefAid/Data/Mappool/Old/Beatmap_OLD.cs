@@ -11,10 +11,10 @@ namespace OsuTourneyRefHelper.Data.Mappool
         int _mapId;
         string _title;
         string _artist;
-        string _mapper;
+        //string _mapper;
         string _diffName;
-        float _bpm;
-        float _stars;
+        //float _bpm;
+        //float _stars;
         MapMod _mod;
         int _modIndex;
         string _mapCategory;
@@ -31,22 +31,22 @@ namespace OsuTourneyRefHelper.Data.Mappool
         {
             get { return _artist; }
         }
-        public string Mapper
-        {
-            get { return _mapper; }
-        }
+        //public string Mapper
+        //{
+        //    get { return _mapper; }
+        //}
         public string DiffName
         {
             get { return _diffName; }
         }
-        public float BPM
-        {
-            get { return _bpm; }
-        }
-        public float Stars
-        {
-            get { return _stars; }
-        }
+        //public float BPM
+        //{
+        //    get { return _bpm; }
+        //}
+        //public float Stars
+        //{
+        //    get { return _stars; }
+        //}
         public MapMod Mod
         {
             get { return _mod; }
@@ -65,10 +65,10 @@ namespace OsuTourneyRefHelper.Data.Mappool
             _mapId = mapId;
             _title = title;
             _artist = artist;
-            _mapper = mapper;
+            //_mapper = mapper;
             _diffName = diffName;
-            _bpm = bpm;
-            _stars = stars;
+            //_bpm = bpm;
+            //_stars = stars;
             _mod = (MapMod)mod;
             //_mod = ConvertMapMod(mod);
             _modIndex = modIndex;
@@ -94,23 +94,44 @@ namespace OsuTourneyRefHelper.Data.Mappool
         }
         public string ToMod()
         {
+            string result = "";
             switch (_mod)
             {
                 case MapMod.NM:
-                    return "None";
+                    result = "None";
+                    break;
                 case MapMod.HD:
-                    return "HD";
+                    result = "HD";
+                    break;
                 case MapMod.HR:
-                    return "HR";
+                    result = "HR";
+                    break;
                 case MapMod.DT:
-                    return "DT";
+                    result = "DT";
+                    break;
+                case MapMod.EZ:
+                    result = "EZ";
+                    break;
                 case MapMod.FM:
-                    return "Freemod";
+                    result = "Freemod";
+                    break;
                 case MapMod.TB:
-                    return "Freemod";
+                    result = "Freemod";
+                    break;
                 default:
-                    return "None";
+                    result = "None";
+                    break;
             }
+
+            if (Settings.SettingsManager.Settings.Tournament.ForceNF)
+            {
+                if (_mod != MapMod.TB && _mod != MapMod.FM)
+                {
+                    result += " NF";
+                }
+            }
+
+            return result;
         }
         public string MapCategory()
         {
@@ -119,7 +140,7 @@ namespace OsuTourneyRefHelper.Data.Mappool
 
         public string MapNameWithDiff()
         {
-            return $"{_title} - {_artist} [{_diffName}]";
+            return $"{_artist} - {_title} [{_diffName}]";
         }
         public string MapName()
         {

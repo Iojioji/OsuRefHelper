@@ -14,6 +14,7 @@ namespace OsuTourneyRefHelper.Data.Mappool
         public List<Beatmap_OLD> hdPool = new List<Beatmap_OLD>();
         public List<Beatmap_OLD> hrPool = new List<Beatmap_OLD>();
         public List<Beatmap_OLD> dtPool = new List<Beatmap_OLD>();
+        public List<Beatmap_OLD> ezPool = new List<Beatmap_OLD>();
         public List<Beatmap_OLD> fmPool = new List<Beatmap_OLD>();
         public List<Beatmap_OLD> tbPool = new List<Beatmap_OLD>();
 
@@ -52,6 +53,8 @@ namespace OsuTourneyRefHelper.Data.Mappool
                     return hrPool;
                 case "DT":
                     return dtPool;
+                case "EZ":
+                    return ezPool;
                 case "FM":
                     return fmPool;
                 case "TB":

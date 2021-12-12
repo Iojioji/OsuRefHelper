@@ -11,5 +11,21 @@ namespace OsuTourneyRefHelper.Data.Mappool
         public string Name;
         public List<BeatMap> Maps = new List<BeatMap>();
         public List<MapMod> Mods = new List<MapMod>();
+
+        public override string ToString()
+        {
+            string aux = $"Section: {Name}\r\n";
+            aux += "Mods: ";
+            foreach (MapMod mod in Mods)
+            {
+                aux += $"{mod}";
+            }
+            aux += "\r\n";
+            foreach (BeatMap map in Maps)
+            {
+                aux += $"{map}\r\n";
+            }
+            return aux;
+        }
     }
 }

@@ -53,6 +53,7 @@ namespace OsuTourneyRefHelper
         TabPage hdPage;
         TabPage hrPage;
         TabPage dtPage;
+        TabPage ezPage;
         TabPage fmPage;
         TabPage tbPage;
 
@@ -88,6 +89,7 @@ namespace OsuTourneyRefHelper
             hdPage = hiddenTabPage;
             hrPage = hardrockTabPage;
             dtPage = doubletimeTabPage;
+            ezPage = easyTabPage;
             fmPage = freemodTabPage;
             tbPage = tiebreakerTabPage;
         }
@@ -359,6 +361,30 @@ namespace OsuTourneyRefHelper
                 File.WriteAllText($"{appPath}/Data/Pools.json", JsonPrettify(output));
             }
         }
+        void LoadPoolFromFile()
+        {
+            string filePath = "";
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "JSON Files (*.json)|*.json";
+                openFileDialog.RestoreDirectory = true;
+                openFileDialog.Title = "Selecciona el pool";
+                
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = openFileDialog.FileName;
+
+                    string jsonContent = File.ReadAllText(filePath);
+
+                    poolManager = LoadPool(jsonContent);
+                    SavePool();
+
+                    SetupStageComBox();
+                    SwitchToStage(0);
+                }
+            }
+        }
         void ChangeWindowTitle()
         {
             this.Text = $"{SettingsManager.Settings.Tournament.TourneyAcronym} Ref Helper{(SettingsManager.Settings.Program.DebuggingToNotepad ? "   ! ! ! DEBUGGING TO NOTEPAD ! ! !" : "")}";
@@ -382,11 +408,13 @@ namespace OsuTourneyRefHelper
             else
             {
                 MessageBox.Show($"No se encontro un archivo de configuracion valido, por favor configura el programa dando click en \"Preferencias\"", "Ref Helper", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                ProgramSettings auxProgSett = new ProgramSettings() {
+                ProgramSettings auxProgSett = new ProgramSettings()
+                {
                     DebuggingToNotepad = false,
                     PoolURL = ""
                 };
-                TournamentSettings auxTourSett = new TournamentSettings() {
+                TournamentSettings auxTourSett = new TournamentSettings()
+                {
                     TourneyAcronym = "TRN",
                     TeamMode = TeamMode.TeamVs,
                     Scoring = ScoreMode.ScoreV2,
@@ -397,6 +425,34 @@ namespace OsuTourneyRefHelper
                 aux.Tournament = auxTourSett;
 
                 return aux;
+            }
+        }
+        SettingsCollection LoadSettings(string json)
+        {
+            SettingsCollection aux = new SettingsCollection();
+            try
+            {
+                aux = JsonConvert.DeserializeObject<SettingsCollection>(json);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Hijuesu, algo se rompio intentando cargar los settings\r\nRevisa que hayas seleccionado el archivo correcto pls\r\nMandale esto al menso del Iojioji\r\n\r\n{e.Message}", "Error inesperado al cargar los settings O:", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return aux;
+        }
+        void SaveSettings()
+        {
+            string jsonContent = JsonConvert.SerializeObject(SettingsManager.Settings);
+            if (File.Exists($"{appPath}/Data/Settings.json"))
+            {
+                if (MessageBox.Show("Estas a punto de sobreescribir tu archivo de settings.\r\nQuieres guardar?", "Guardar Settings.json", MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.Yes)
+                {
+                    File.WriteAllText($"{appPath}/Data/Settings.json", JsonPrettify(jsonContent));
+                }
+            }
+            else
+            {
+                File.WriteAllText($"{appPath}/Data/Settings.json", JsonPrettify(jsonContent));
             }
         }
         void CreateDummyPool()
@@ -483,6 +539,8 @@ namespace OsuTourneyRefHelper
                         tabMenu.TabPages.Add(hrPage);
                     if (currentPool.dtPool.Count > 0)
                         tabMenu.TabPages.Add(dtPage);
+                    if (currentPool.ezPool.Count > 0)
+                        tabMenu.TabPages.Add(ezPage);
                     if (currentPool.fmPool.Count > 0)
                         tabMenu.TabPages.Add(fmPage);
                     if (currentPool.tbPool.Count > 0)
@@ -494,6 +552,7 @@ namespace OsuTourneyRefHelper
                     tabMenu.TabPages.Remove(hdPage);
                     tabMenu.TabPages.Remove(hrPage);
                     tabMenu.TabPages.Remove(dtPage);
+                    tabMenu.TabPages.Remove(ezPage);
                     tabMenu.TabPages.Remove(fmPage);
                     tabMenu.TabPages.Remove(tbPage);
                 }
@@ -508,6 +567,7 @@ namespace OsuTourneyRefHelper
                 AddButtonsToTab(hiddenButtFlowLayout, currentPool.hdPool, true);
                 AddButtonsToTab(hardrockButtFlowLayout, currentPool.hrPool, true);
                 AddButtonsToTab(doubletimeButtFlowLayout, currentPool.dtPool, true);
+                AddButtonsToTab(easyButtFlowLayout, currentPool.ezPool, true);
                 AddButtonsToTab(freemodButtFlowLayout, currentPool.fmPool, true);
                 AddButtonsToTab(tiebreakerButtFlowLayout, currentPool.tbPool, true);
             }
@@ -547,7 +607,8 @@ namespace OsuTourneyRefHelper
                 newButton.Name = $"{pool[i].MapCategory()}-Butt";
                 //newButton.Text = $"{pool[i].MapCategory()}\r\n•{pool[i].Title}\r\n•{pool[i].Artist}\r\n•Diff: [{pool[i].DiffName}]\r\n•Mapper: {pool[i].Mapper}";
                 //newButton.Text = $"{pool[i].MapCategory()}\r\n\r\n•{pool[i].Title}\r\n•{pool[i].Artist}\r\n•Mapper: {pool[i].Mapper}";
-                newButton.Text = $"{pool[i].MapCategory()}\r\n\r\n•{pool[i].MapName()}\r\n•Mapper: {pool[i].Mapper}";
+                //newButton.Text = $"{pool[i].MapCategory()}\r\n\r\n•{pool[i].MapName()}\r\n•Mapper: {pool[i].Mapper}";
+                newButton.Text = $"{pool[i].MapCategory()}\r\n\r\n•{pool[i].MapName()}\r\n•Diff: [{pool[i].DiffName}]";
                 newButton.Size = new Size(250, 60);
                 newButton.UseVisualStyleBackColor = true;
                 newButton.Click += new EventHandler(MapSelectButton_Click);
@@ -733,6 +794,10 @@ namespace OsuTourneyRefHelper
         {
             await SendInput("!mp timer 120");
         }
+        private async void mptimer60_Click(object sender, EventArgs e)
+        {
+            await SendInput("!mp timer 60");
+        }
         private async void mpaborttimerButt_Click(object sender, EventArgs e)
         {
             await SendInput("!mp aborttimer");
@@ -782,7 +847,32 @@ namespace OsuTourneyRefHelper
                 string output = JsonConvert.SerializeObject(SettingsManager.Settings);
                 File.WriteAllText(saveSettingsDialog.FileName, JsonPrettify(output));
             }
+        }
+        private void importSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
 
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "JSON Files (*.json)|*.json";
+                openFileDialog.RestoreDirectory = true;
+                openFileDialog.Title = "Selecciona el archivo de settings como no";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = openFileDialog.FileName;
+
+                    string jsonContent = File.ReadAllText(filePath);
+
+                    SettingsCollection aux = LoadSettings(jsonContent);
+                    if (aux != null)
+                    {
+                        SettingsManager.Settings = aux;
+                        SaveSettings();
+                        ChangeWindowTitle();
+                    }
+                }
+            }
         }
         private void updatePoolToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -791,7 +881,8 @@ namespace OsuTourneyRefHelper
         private void importPoolToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Do the explorer thing
-            SavePool();
+            LoadPoolFromFile();
+            //SavePool();
         }
 
         private void CheckUpdate_Click(object sender, EventArgs e)

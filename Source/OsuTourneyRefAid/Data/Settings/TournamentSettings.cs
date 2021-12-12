@@ -14,5 +14,6 @@ namespace OsuTourneyRefHelper.Data.Settings
         public TeamMode TeamMode;
         public ScoreMode Scoring;
         public int TeamSize;
+        public bool ForceNF;
     }
 }

@@ -45,6 +45,7 @@
             this.tourneyAcronymLbl = new System.Windows.Forms.Label();
             this.saveSettingsButt = new System.Windows.Forms.Button();
             this.importSettingsButt = new System.Windows.Forms.Button();
+            this.ForceNFCheBox = new System.Windows.Forms.CheckBox();
             this.settingsTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.tournamentTabPage.SuspendLayout();
@@ -123,6 +124,7 @@
             // tournamentTabPage
             // 
             this.tournamentTabPage.AutoScroll = true;
+            this.tournamentTabPage.Controls.Add(this.ForceNFCheBox);
             this.tournamentTabPage.Controls.Add(this.tourneyPlayersNumUpDow);
             this.tournamentTabPage.Controls.Add(this.tourneyPlayersLbl);
             this.tournamentTabPage.Controls.Add(this.tourneySMComBox);
@@ -253,6 +255,16 @@
             this.importSettingsButt.Text = "Importars";
             this.importSettingsButt.UseVisualStyleBackColor = true;
             // 
+            // ForceNFCheBox
+            // 
+            this.ForceNFCheBox.AutoSize = true;
+            this.ForceNFCheBox.Location = new System.Drawing.Point(9, 110);
+            this.ForceNFCheBox.Name = "ForceNFCheBox";
+            this.ForceNFCheBox.Size = new System.Drawing.Size(72, 17);
+            this.ForceNFCheBox.TabIndex = 8;
+            this.ForceNFCheBox.Text = "Forzar NF";
+            this.ForceNFCheBox.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,5 +308,6 @@
         private System.Windows.Forms.NumericUpDown tourneyPlayersNumUpDow;
         private System.Windows.Forms.Label tourneyPlayersLbl;
         private System.Windows.Forms.Button importSettingsButt;
+        private System.Windows.Forms.CheckBox ForceNFCheBox;
     }
 }

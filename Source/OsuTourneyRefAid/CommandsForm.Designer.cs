@@ -50,6 +50,8 @@
             this.hardrockButtFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.doubletimeTabPage = new System.Windows.Forms.TabPage();
             this.doubletimeButtFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
+            this.easyTabPage = new System.Windows.Forms.TabPage();
+            this.easyButtFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.freemodTabPage = new System.Windows.Forms.TabPage();
             this.freemodButtFlowLayout = new System.Windows.Forms.FlowLayoutPanel();
             this.tiebreakerTabPage = new System.Windows.Forms.TabPage();
@@ -61,7 +63,7 @@
             this.mpstart10Butt = new System.Windows.Forms.Button();
             this.mpabortButt = new System.Windows.Forms.Button();
             this.mpaborttimerButt = new System.Windows.Forms.Button();
-            this.mptimer = new System.Windows.Forms.Button();
+            this.mptimer120 = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.fileStripButt = new System.Windows.Forms.ToolStripDropDownButton();
             this.exportSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +75,8 @@
             this.exportPoolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsStripButt = new System.Windows.Forms.ToolStripButton();
             this.updateStripButt = new System.Windows.Forms.ToolStripButton();
+            this.mptimer60 = new System.Windows.Forms.Button();
+            this.importSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMenu.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.generalButtFlowLayout.SuspendLayout();
@@ -80,6 +84,7 @@
             this.hiddenTabPage.SuspendLayout();
             this.hardrockTabPage.SuspendLayout();
             this.doubletimeTabPage.SuspendLayout();
+            this.easyTabPage.SuspendLayout();
             this.freemodTabPage.SuspendLayout();
             this.tiebreakerTabPage.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -92,6 +97,7 @@
             this.tabMenu.Controls.Add(this.hiddenTabPage);
             this.tabMenu.Controls.Add(this.hardrockTabPage);
             this.tabMenu.Controls.Add(this.doubletimeTabPage);
+            this.tabMenu.Controls.Add(this.easyTabPage);
             this.tabMenu.Controls.Add(this.freemodTabPage);
             this.tabMenu.Controls.Add(this.tiebreakerTabPage);
             this.tabMenu.Location = new System.Drawing.Point(12, 64);
@@ -313,6 +319,26 @@
             this.doubletimeButtFlowLayout.Size = new System.Drawing.Size(530, 263);
             this.doubletimeButtFlowLayout.TabIndex = 3;
             // 
+            // easyTabPage
+            // 
+            this.easyTabPage.Controls.Add(this.easyButtFlowLayout);
+            this.easyTabPage.Location = new System.Drawing.Point(4, 22);
+            this.easyTabPage.Name = "easyTabPage";
+            this.easyTabPage.Size = new System.Drawing.Size(530, 263);
+            this.easyTabPage.TabIndex = 7;
+            this.easyTabPage.Text = "Easy";
+            this.easyTabPage.UseVisualStyleBackColor = true;
+            // 
+            // easyButtFlowLayout
+            // 
+            this.easyButtFlowLayout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.easyButtFlowLayout.AutoScroll = true;
+            this.easyButtFlowLayout.Location = new System.Drawing.Point(0, 0);
+            this.easyButtFlowLayout.Name = "easyButtFlowLayout";
+            this.easyButtFlowLayout.Size = new System.Drawing.Size(536, 263);
+            this.easyButtFlowLayout.TabIndex = 4;
+            // 
             // freemodTabPage
             // 
             this.freemodTabPage.Controls.Add(this.freemodButtFlowLayout);
@@ -422,7 +448,7 @@
             // mpaborttimerButt
             // 
             this.mpaborttimerButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mpaborttimerButt.Location = new System.Drawing.Point(404, 28);
+            this.mpaborttimerButt.Location = new System.Drawing.Point(459, 28);
             this.mpaborttimerButt.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.mpaborttimerButt.Name = "mpaborttimerButt";
             this.mpaborttimerButt.Size = new System.Drawing.Size(55, 35);
@@ -431,17 +457,17 @@
             this.mpaborttimerButt.UseVisualStyleBackColor = true;
             this.mpaborttimerButt.Click += new System.EventHandler(this.mpaborttimerButt_Click);
             // 
-            // mptimer
+            // mptimer120
             // 
-            this.mptimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mptimer.Location = new System.Drawing.Point(349, 28);
-            this.mptimer.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.mptimer.Name = "mptimer";
-            this.mptimer.Size = new System.Drawing.Size(55, 35);
-            this.mptimer.TabIndex = 6;
-            this.mptimer.Text = "Timer\r\n120 seg";
-            this.mptimer.UseVisualStyleBackColor = true;
-            this.mptimer.Click += new System.EventHandler(this.mptimer_Click);
+            this.mptimer120.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mptimer120.Location = new System.Drawing.Point(349, 28);
+            this.mptimer120.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.mptimer120.Name = "mptimer120";
+            this.mptimer120.Size = new System.Drawing.Size(55, 35);
+            this.mptimer120.TabIndex = 6;
+            this.mptimer120.Text = "Timer\r\n120 seg";
+            this.mptimer120.UseVisualStyleBackColor = true;
+            this.mptimer120.Click += new System.EventHandler(this.mptimer_Click);
             // 
             // toolStrip1
             // 
@@ -460,7 +486,8 @@
             // 
             this.fileStripButt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fileStripButt.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportSettingsToolStripMenuItem});
+            this.exportSettingsToolStripMenuItem,
+            this.importSettingsToolStripMenuItem});
             this.fileStripButt.Image = ((System.Drawing.Image)(resources.GetObject("fileStripButt.Image")));
             this.fileStripButt.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.fileStripButt.Name = "fileStripButt";
@@ -470,7 +497,7 @@
             // exportSettingsToolStripMenuItem
             // 
             this.exportSettingsToolStripMenuItem.Name = "exportSettingsToolStripMenuItem";
-            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.exportSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exportSettingsToolStripMenuItem.Text = "Export Settings";
             this.exportSettingsToolStripMenuItem.Click += new System.EventHandler(this.exportSettingsToolStripMenuItem_Click);
             // 
@@ -491,6 +518,7 @@
             // 
             // poolEditorToolStripMenuItem
             // 
+            this.poolEditorToolStripMenuItem.Enabled = false;
             this.poolEditorToolStripMenuItem.Name = "poolEditorToolStripMenuItem";
             this.poolEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.poolEditorToolStripMenuItem.Text = "Pool Editor";
@@ -510,7 +538,6 @@
             // 
             // importPoolToolStripMenuItem
             // 
-            this.importPoolToolStripMenuItem.Enabled = false;
             this.importPoolToolStripMenuItem.Name = "importPoolToolStripMenuItem";
             this.importPoolToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importPoolToolStripMenuItem.Text = "Import Pool";
@@ -545,15 +572,35 @@
             this.updateStripButt.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.updateStripButt.Click += new System.EventHandler(this.CheckUpdate_Click);
             // 
+            // mptimer60
+            // 
+            this.mptimer60.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mptimer60.Location = new System.Drawing.Point(404, 28);
+            this.mptimer60.Margin = new System.Windows.Forms.Padding(0);
+            this.mptimer60.Name = "mptimer60";
+            this.mptimer60.Size = new System.Drawing.Size(55, 35);
+            this.mptimer60.TabIndex = 9;
+            this.mptimer60.Text = "Timer\r\n 60 seg";
+            this.mptimer60.UseVisualStyleBackColor = true;
+            this.mptimer60.Click += new System.EventHandler(this.mptimer60_Click);
+            // 
+            // importSettingsToolStripMenuItem
+            // 
+            this.importSettingsToolStripMenuItem.Name = "importSettingsToolStripMenuItem";
+            this.importSettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.importSettingsToolStripMenuItem.Text = "Import Settings";
+            this.importSettingsToolStripMenuItem.Click += new System.EventHandler(this.importSettingsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(562, 365);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.errorLbl);
+            this.Controls.Add(this.mptimer60);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mpaborttimerButt);
-            this.Controls.Add(this.mptimer);
+            this.Controls.Add(this.mptimer120);
             this.Controls.Add(this.mpabortButt);
             this.Controls.Add(this.mpstart10Butt);
             this.Controls.Add(this.mpsettingsButt);
@@ -573,6 +620,7 @@
             this.hiddenTabPage.ResumeLayout(false);
             this.hardrockTabPage.ResumeLayout(false);
             this.doubletimeTabPage.ResumeLayout(false);
+            this.easyTabPage.ResumeLayout(false);
             this.freemodTabPage.ResumeLayout(false);
             this.tiebreakerTabPage.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
@@ -616,7 +664,7 @@
         private System.Windows.Forms.Button mpstart10Butt;
         private System.Windows.Forms.Button mpabortButt;
         private System.Windows.Forms.Button mpaborttimerButt;
-        private System.Windows.Forms.Button mptimer;
+        private System.Windows.Forms.Button mptimer120;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton updateStripButt;
         private System.Windows.Forms.ToolStripDropDownButton fileStripButt;
@@ -628,6 +676,10 @@
         private System.Windows.Forms.ToolStripMenuItem importPoolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportPoolToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton settingsStripButt;
+        private System.Windows.Forms.TabPage easyTabPage;
+        private System.Windows.Forms.FlowLayoutPanel easyButtFlowLayout;
+        private System.Windows.Forms.Button mptimer60;
+        private System.Windows.Forms.ToolStripMenuItem importSettingsToolStripMenuItem;
     }
 }
 

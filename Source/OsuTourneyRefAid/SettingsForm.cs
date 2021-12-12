@@ -47,6 +47,7 @@ namespace OsuTourneyRefHelper
             SettingsManager.Settings.Tournament.TeamMode = (TeamMode)tourneyTMComBox.SelectedIndex;
             SettingsManager.Settings.Tournament.Scoring = (ScoreMode)tourneySMComBox.SelectedIndex;
             SettingsManager.Settings.Tournament.TeamSize = (int)tourneyPlayersNumUpDow.Value;
+            SettingsManager.Settings.Tournament.ForceNF = ForceNFCheBox.Checked;
         }
         void LoadSettings()
         {
@@ -56,7 +57,8 @@ namespace OsuTourneyRefHelper
             tourneyAcronymTexBox.Text = SettingsManager.Settings.Tournament.TourneyAcronym;
             tourneyTMComBox.SelectedIndex = (int)SettingsManager.Settings.Tournament.TeamMode;
             tourneySMComBox.SelectedIndex = (int)SettingsManager.Settings.Tournament.Scoring;
-            tourneyPlayersNumUpDow.Value = (decimal)SettingsManager.Settings.Tournament.TeamSize;
+            tourneyPlayersNumUpDow.Value = SettingsManager.Settings.Tournament.TeamSize;
+            ForceNFCheBox.Checked = SettingsManager.Settings.Tournament.ForceNF;
         }
         void SaveSettings()
         {
